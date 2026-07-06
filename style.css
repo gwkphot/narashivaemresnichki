@@ -113,60 +113,104 @@ MOBILE
 
 @media (max-width:768px){
 
-.wrap{
-  height:auto;
-}
-
-.block{
-  position:sticky;
-  top:0;
-  height:100vh;
-
-  display:flex;
-  flex-direction:column;
-
-  transform:scale(1);
-}
-
-.half{
-  width:100%;
-}
-
-/* SYMBOL */
-.symbol{
-  height:auto;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:20px 0;
-}
-
-.symbol img{
-  width:min(70%,320px);
-  height:auto;
-}
-
-/* TEXT */
-.text{
-  background:#1a1a1a;
-  color:#fff;
-
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-
-  padding:20px;
-}
-
-/* MOBILE TYPO */
-h2{
-  font-size:20px;
-  margin-bottom:10px;
-}
-
-p{
-  font-size:14px;
-  line-height:1.4;
-}
-
-}
+  .wrap{
+    height:auto;
+  }
+  
+  
+  /* =========================
+  HERO — ПОЛНЫЙ ЭКРАН
+  ========================= */
+  
+  .hero-block{
+    width:100%;
+    height:100vh;
+    aspect-ratio:auto;
+  }
+  
+  
+  .hero-block img{
+    position:absolute;
+    inset:0;
+  
+    width:100%;
+    height:100%;
+  
+    object-fit:cover;
+  }
+  
+  
+  /* =========================
+  ОСТАЛЬНЫЕ БЛОКИ — КВАДРАТЫ
+  ========================= */
+  
+  .block{
+    position:sticky;
+    top:0;
+  
+    width:100%;
+    aspect-ratio:1 / 1;
+    height:auto;
+  
+    display:flex;
+    flex-direction:column;
+  
+    overflow:hidden;
+  
+    transform:none;
+  }
+  
+  
+  /* чтобы не было прозрачных дыр */
+  .block,
+  .hero-block{
+    background:#111;
+  }
+  
+  
+  /* половины */
+  .half{
+    width:100%;
+  }
+  
+  
+  /* символ */
+  .symbol{
+    flex:1;
+  
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  
+    padding:20px;
+  }
+  
+  
+  .symbol img{
+    width:70%;
+    height:auto;
+  }
+  
+  
+  /* текст */
+  .text{
+    flex:1;
+  
+    padding:20px;
+  
+    justify-content:center;
+  }
+  
+  
+  h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  
+  
+  p{
+    font-size:14px;
+    line-height:1.4;
+  }
+  
+  }
