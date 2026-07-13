@@ -1,25 +1,344 @@
-const blocks = document.querySelectorAll(".block");
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 
-const observer = new IntersectionObserver((entries)=>{
+body{
 
-    entries.forEach((entry)=>{
+    background:#111;
 
-        if(entry.isIntersecting){
+    font-family:'Inter', sans-serif;
 
-            entry.target.classList.add("active");
+    font-weight:500;
 
-        }
-
-    });
-
-},{
-    threshold:0.5
-});
+}
 
 
-blocks.forEach((block)=>{
 
-    observer.observe(block);
 
-});
+.wrap{
+
+    height:500vh;
+
+}
+
+
+
+
+/* =========================
+HERO
+========================= */
+
+
+.hero-block{
+
+    position:sticky;
+
+    top:0;
+
+    width:100%;
+
+    height:100vh;
+
+    overflow:hidden;
+
+}
+
+
+
+.hero-block img{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+
+
+
+
+/* =========================
+DESKTOP
+========================= */
+
+
+.card-block{
+
+    position:sticky;
+
+    top:0;
+
+    height:100vh;
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    overflow:hidden;
+
+}
+
+
+
+
+.half{
+
+    position:relative;
+
+    display:flex;
+
+    overflow:hidden;
+
+}
+
+
+
+
+
+/* COLORS */
+
+
+.orange{
+
+    background:#ff4d1a;
+
+}
+
+
+.green{
+
+    background:#7CFF2E;
+
+}
+
+
+.purple{
+
+    background:#6A4CFF;
+
+}
+
+
+
+
+
+
+/* IMAGE AREA */
+
+
+.symbol{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+
+.symbol img{
+
+    width:min(72vh,680px);
+
+    height:min(72vh,680px);
+
+    object-fit:contain;
+
+}
+
+
+
+
+
+
+/* TEXT AREA */
+
+
+.text{
+
+    background:#1a1a1a;
+
+    color:#fff;
+
+    padding:70px 80px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+}
+
+
+
+
+h2{
+
+    font-size:clamp(52px,4vw,72px);
+
+    line-height:.95;
+
+    font-weight:500;
+
+    margin-bottom:24px;
+
+}
+
+
+
+
+p{
+
+    font-size:clamp(22px,1.6vw,30px);
+
+    line-height:1.5;
+
+    opacity:.92;
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+MOBILE
+========================= */
+
+
+@media(max-width:768px){
+
+
+    .wrap{
+
+        height:auto;
+
+    }
+
+
+
+
+    .card-block{
+
+
+        position:relative;
+
+
+        top:auto;
+
+
+        width:100%;
+
+
+        height:100vh;
+
+
+        display:flex;
+
+
+        flex-direction:column;
+
+
+    }
+
+
+
+
+
+    /*
+    Всегда:
+    1. картинка
+    2. текст
+    */
+
+
+    .symbol{
+
+        order:1;
+
+        width:100%;
+
+        height:55%;
+
+    }
+
+
+
+
+    .text{
+
+        order:2;
+
+        width:100%;
+
+        height:45%;
+
+        padding:25px;
+
+        justify-content:flex-start;
+
+    }
+
+
+
+
+
+    .symbol img{
+
+        width:55%;
+
+        max-width:260px;
+
+        height:auto;
+
+    }
+
+
+
+
+
+    h2{
+
+        font-size:28px;
+
+        line-height:1;
+
+        margin-bottom:15px;
+
+    }
+
+
+
+
+
+    p{
+
+        font-size:15px;
+
+        line-height:1.45;
+
+    }
+
+
+
+
+
+}
