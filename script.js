@@ -1,31 +1,24 @@
-const blocks = document.querySelectorAll('.block');
+const blocks = document.querySelectorAll(".block");
 
 
 const observer = new IntersectionObserver((entries)=>{
 
-    entries.forEach(entry=>{
+    entries.forEach((entry)=>{
 
         if(entry.isIntersecting){
 
-            entry.target.classList.add('active');
-
-        }else{
-
-            entry.target.classList.remove('active');
+            entry.target.classList.add("active");
 
         }
 
     });
 
 },{
-
-    threshold:0.6
-
+    threshold:0.5
 });
 
 
-
-blocks.forEach(block=>{
+blocks.forEach((block)=>{
 
     observer.observe(block);
 
