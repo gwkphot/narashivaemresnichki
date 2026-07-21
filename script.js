@@ -1,25 +1,108 @@
-const blocks = document.querySelectorAll(".block");
+gsap.registerPlugin(ScrollTrigger);
 
 
-const observer = new IntersectionObserver((entries)=>{
+const cards = document.querySelectorAll(".card-block");
 
-    entries.forEach((entry)=>{
 
-        if(entry.isIntersecting){
+cards.forEach((card, index) => {
 
-            entry.target.classList.add("active");
 
-        }
+    if(index !== cards.length - 1){
+
+        gsap.to(card, {
+
+            scale:0.92,
+
+            opacity:0.5,
+
+            scrollTrigger:{
+
+                trigger:card,
+
+                start:"top top",
+
+                end:"bottom top",
+
+                scrub:true,
+
+            }
+
+        });
+
+    }
+
+
+});
+
+
+
+/*
+    STACK EFFECT
+    следующий блок заезжает сверху
+*/
+
+
+cards.forEach((card)=>{
+
+
+    ScrollTrigger.create({
+
+        trigger:card,
+
+        start:"top top",
+
+        end:"bottom top",
+
+        pin:true,
+
+        pinSpacing:false,
 
     });
 
-},{
-    threshold:0.5
-});
-
-
-blocks.forEach((block)=>{
-
-    observer.observe(block);
 
 });
+
+
+
+/*
+    MOBILE:
+    всегда картинка сверху
+*/
+
+
+function mobileOrder(){
+
+
+    if(window.innerWidth <= 768){
+
+
+        cards.forEach(card=>{
+
+
+            const symbol = card.querySelector(".symbol");
+
+            const text = card.querySelector(".text");
+
+
+            if(symbol && text){
+
+                symbol.style.order="1";
+
+                text.style.order="2";
+
+            }
+
+
+        });
+
+
+    }
+
+
+}
+
+
+mobileOrder();
+
+
+window.addEventListener("resize", mobileOrder);
