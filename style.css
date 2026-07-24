@@ -1,12 +1,8 @@
 *{
-
 margin:0;
 padding:0;
-
 box-sizing:border-box;
-
 }
-
 
 
 html{
@@ -23,20 +19,43 @@ background:#d9d9d9;
 
 font-family:'Inter',sans-serif;
 
-overflow-x:hidden;
+color:#111;
 
-color:#333333;
+overflow-x:hidden;
 
 }
 
 
 
-.wrap{
 
-width:100%;
+
+
+
+/* =========================
+MAIN STICKY STACK
+========================= */
+
+
+.main-stack{
 
 position:relative;
 
+width:100%;
+
+}
+
+
+
+.stack-card{
+
+height:100vh;
+
+position:sticky;
+
+top:0;
+
+overflow:hidden;
+
 }
 
 
@@ -46,22 +65,73 @@ position:relative;
 
 
 
-/* ================= HERO ================= */
+
+.stack-card{
+
+z-index:1;
+
+}
+
+
+.stack-card:nth-child(1){
+z-index:1;
+}
+
+.stack-card:nth-child(2){
+z-index:2;
+}
+
+.stack-card:nth-child(3){
+z-index:3;
+}
+
+.stack-card:nth-child(4){
+z-index:4;
+}
+
+.stack-card:nth-child(5){
+z-index:5;
+}
+
+.stack-card:nth-child(6){
+z-index:6;
+}
+
+.stack-card:nth-child(7){
+z-index:7;
+}
+
+.stack-card:nth-child(8){
+z-index:8;
+}
+
+.stack-card:nth-child(9){
+z-index:9;
+}
+
+.stack-card:nth-child(10){
+z-index:10;
+}
+
+
+
+
+
+
+/* =========================
+HERO
+========================= */
 
 
 .hero-block{
 
-height:100vh;
+background:#7CFF2E;
 
 display:flex;
 
 align-items:center;
 
 justify-content:center;
-
-background:#7CFF2E;
-
-overflow:hidden;
 
 }
 
@@ -93,81 +163,26 @@ text-align:center;
 
 
 
-/* ================= INTRO STACK ================= */
-
-
-.intro-stack{
-
-position:relative;
-
-}
-
-
-
-
-
-.intro-stack .manifest-block,
-.intro-stack .description-block,
-.intro-stack .image-first{
-
-position:sticky;
-
-top:0;
-
-}
-
-
-
-
-
-
-
-.intro-stack .manifest-block{
-
-z-index:1;
-
-}
-
-
-
-.intro-stack .description-block{
-
-z-index:2;
-
-}
-
-
-
-.intro-stack .image-first{
-
-z-index:3;
-
-}
-
-
-
-
-
-
-
-
-
-/* ================= MANIFEST ================= */
+/* =========================
+MANIFEST
+========================= */
 
 
 .manifest-block{
 
-height:100vh;
-
 background:#d9d9d9;
 
-padding:70px 80px 80px;
+padding:70px 80px;
+
+display:flex;
 
 }
 
 
 
 .manifest-content{
+
+width:100%;
 
 height:100%;
 
@@ -176,6 +191,7 @@ display:flex;
 flex-direction:column;
 
 }
+
 
 
 
@@ -199,17 +215,17 @@ color:#333333;
 
 
 
+
+
 .manifest-slogan{
 
 margin-top:auto;
 
-margin-left:auto;
-
 display:flex;
 
-flex-direction:column;
+flex-direction:row;
 
-align-items:flex-end;
+gap:.25em;
 
 font-family:'Inter',sans-serif;
 
@@ -229,9 +245,7 @@ color:#333333;
 
 .manifest-slogan .word{
 
-opacity:0;
-
-filter:blur(8px);
+display:inline-block;
 
 }
 
@@ -243,20 +257,47 @@ filter:blur(8px);
 
 
 
-/* ================= DESCRIPTION ================= */
+/* =========================
+IMAGE LAYERS
+========================= */
+
+
+.image-card{
+
+width:100%;
+
+}
+
+
+
+.image-card img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+display:block;
+
+}
+
+
+
+/* =========================
+DESCRIPTION STACK
+========================= */
 
 
 .description-block{
 
-height:100vh;
-
-background:#ff4d1a;
+background:#bdbdb8;
 
 padding:70px 80px;
 
 display:flex;
 
-align-items:flex-end;
+align-items:flex-start;
 
 }
 
@@ -284,123 +325,31 @@ max-width:1600px;
 
 
 
-
-
-
-
-/* ================= IMAGE BLOCKS ================= */
-
-
-.image-block{
-
-height:100vh;
-
-position:relative;
-
-}
-
-
-
-
-
-.image-wrapper{
-
-width:100%;
-
-height:100vh;
-
-overflow:hidden;
-
-}
-
-
-
-
-
-.image-wrapper img{
-
-width:100%;
-
-height:100%;
-
-display:block;
-
-object-fit:cover;
-
-object-position:center center;
-
-}
-
-
-
-
-
-
-
-
-
-/* ================= CARD GROUPS ================= */
-
-
-.cards-group{
-
-position:relative;
-
-}
-
-
-
-
-
-
-
-
-/* ================= STICKY CARDS ================= */
+/* =========================
+CARDS
+========================= */
 
 
 .card-block{
-
-height:100vh;
-
-position:sticky;
-
-top:0;
 
 display:grid;
 
 grid-template-columns:1fr 1fr;
 
-overflow:hidden;
-
 }
 
 
 
+/* =========================
+STICKY CARD DELAY
+========================= */
 
+.card-block{
 
-
-.card-block:nth-child(1){
-
-z-index:2;
-
-}
-
-
-
-.card-block:nth-child(2){
-
-z-index:3;
+margin-bottom:18vh;
 
 }
 
-
-
-
-
-
-
-
-/* ================= CARD PARTS ================= */
 
 
 .half{
@@ -417,10 +366,17 @@ overflow:hidden;
 
 
 
+.stack-card:nth-child(10){
+z-index:10;
+}
 
 
 
-/* COLORS */
+
+
+/* =========================
+COLORS
+========================= */
 
 
 .orange{
@@ -451,19 +407,9 @@ background:#6A4CFF;
 
 
 
-/* ================= SYMBOL ================= */
-
-
-.symbol{
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-}
-
+/* =========================
+SYMBOLS
+========================= */
 
 
 .symbol img{
@@ -483,26 +429,27 @@ object-fit:contain;
 
 
 
-/* ================= TEXT ================= */
+
+/* =========================
+TEXT
+========================= */
 
 
 .text{
 
 background:#d9d9d9;
 
-padding:70px 80px;
+padding:70px 40px 70px 40px;
 
 display:flex;
 
 flex-direction:column;
 
-justify-content:space-between;
+justify-content:flex-start;
 
 align-items:flex-start;
 
 }
-
-
 
 .text h2{
 
@@ -518,7 +465,12 @@ letter-spacing:-.045em;
 
 color:#333333;
 
+margin-bottom:auto;
+
+max-width:700px;
+
 }
+
 
 
 
@@ -528,23 +480,47 @@ font-family:'Inter',sans-serif;
 
 font-weight:500;
 
-font-size:clamp(22px,1.6vw,30px);
+font-size:clamp(28px,2vw,42px);
 
-line-height:1.15;
+line-height:1.1;
 
-letter-spacing:-.025em;
+letter-spacing:-.035em;
 
 color:#333333;
 
-max-width:700px;
+max-width:850px;
+
+}
+
+/* =========================
+TABLET
+========================= */
+
+
+@media(max-width:1024px){
+
+
+.manifest-block{
+
+padding:50px;
 
 }
 
 
-/* ================= TABLET ================= */
+
+.manifest-content h1{
+
+font-size:48px;
+
+}
 
 
-@media(max-width:1024px){
+
+.manifest-slogan{
+
+font-size:48px;
+
+}
 
 
 
@@ -592,14 +568,16 @@ height:75%;
 
 
 
-/* ================= MOBILE ================= */
+/* =========================
+MOBILE
+========================= */
 
 
 @media(max-width:768px){
 
 
 
-/* ================= HERO ================= */
+/* HERO */
 
 
 .hero-title{
@@ -614,53 +592,43 @@ font-size:72px;
 
 
 
-
-/* ================= INTRO STACK ================= */
-
-
-.intro-stack .manifest-block,
-.intro-stack .description-block,
-.intro-stack .image-first{
-
-
-position:sticky;
-
-top:0;
-
-}
-
-
-
+/* MANIFEST */
 
 
 .manifest-block{
 
-
-height:100vh;
-
-padding:40px 24px 50px;
+padding:40px 24px;
 
 }
-
-
 
 
 
 .manifest-content h1{
 
-
 font-size:38px;
 
 }
-
-
 
 
 
 .manifest-slogan{
 
+font-size:34px;
 
-font-size:38px;
+gap:.15em;
+
+}
+
+
+
+
+
+/* IMAGES */
+
+
+.image-card img{
+
+object-position:center;
 
 }
 
@@ -672,95 +640,10 @@ font-size:38px;
 
 
 
-/* ================= DESCRIPTION ================= */
-
-
-
-.description-block{
-
-
-height:100vh;
-
-padding:40px 24px 60px;
-
-align-items:flex-end;
-
-}
-
-
-
-
-
-.description-block p{
-
-
-font-size:24px;
-
-line-height:1.15;
-
-}
-
-
-
-
-
-
-
-
-
-/* ================= IMAGES ================= */
-
-
-
-.image-block{
-
-
-height:100vw;
-
-}
-
-
-
-
-
-.image-wrapper{
-
-
-height:100vw;
-
-width:100%;
-
-}
-
-
-
-
-
-.image-wrapper img{
-
-
-object-fit:cover;
-
-object-position:center center;
-
-}
-
-
-
-
-
-
-
-
-
-/* ================= CARDS ================= */
-
+/* CARDS */
 
 
 .card-block{
-
-
-height:100vh;
 
 display:flex;
 
@@ -770,10 +653,7 @@ flex-direction:column;
 
 
 
-
-
 .symbol{
-
 
 height:50vh;
 
@@ -785,25 +665,17 @@ order:1;
 
 
 
-
-
 .symbol img{
 
+width:90%;
 
-width:92%;
-
-height:92%;
-
-object-fit:contain;
+height:90%;
 
 }
 
 
 
-
-
 .text{
-
 
 height:50vh;
 
@@ -821,26 +693,16 @@ padding:28px 24px;
 
 .text h2{
 
-
 font-size:34px;
 
-line-height:.95;
-
 }
-
-
 
 
 
 .text p{
 
-
 font-size:18px;
 
-line-height:1.2;
-
-max-width:none;
-
 }
 
 
@@ -857,7 +719,9 @@ max-width:none;
 
 
 
-/* ================= SMALL MOBILE ================= */
+/* =========================
+SMALL MOBILE
+========================= */
 
 
 @media(max-width:480px){
@@ -866,23 +730,15 @@ max-width:none;
 
 .hero-title{
 
-
 font-size:56px;
-
 
 }
 
 
 
-
-
-
-
 .manifest-content h1{
 
-
 font-size:32px;
-
 
 }
 
@@ -890,44 +746,9 @@ font-size:32px;
 
 .manifest-slogan{
 
-
-font-size:32px;
-
+font-size:28px;
 
 }
-
-
-
-
-
-
-
-.description-block p{
-
-
-font-size:20px;
-
-
-}
-
-
-
-
-
-
-
-.symbol img{
-
-
-width:95%;
-
-
-height:95%;
-
-
-}
-
-
 
 
 
@@ -935,35 +756,83 @@ height:95%;
 
 .text{
 
-
 padding:22px;
 
-
 }
-
-
 
 
 
 .text h2{
 
-
 font-size:30px;
 
-
 }
-
 
 
 
 .text p{
 
-
 font-size:17px;
-
 
 }
 
 
+
+}
+
+.logo-fixed{
+
+position:fixed;
+
+top:35px;
+
+right:40px;
+
+z-index:9999;
+
+width:60px;
+
+height:60px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border:2px solid #111;
+
+background:transparent;
+
+transition:.3s ease;
+
+overflow:hidden;
+
+}
+
+
+.logo-fixed img{
+
+width:75%;
+
+height:75%;
+
+object-fit:contain;
+
+transition:.3s ease;
+
+}
+
+
+.logo-fixed:hover{
+
+background:#111;
+
+}
+
+
+.logo-fixed:hover img{
+
+filter:invert(1);
 
 }
