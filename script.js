@@ -2,7 +2,11 @@
 GSAP INIT
 ========================= */
 
+
 gsap.registerPlugin(ScrollTrigger);
+
+
+
 
 
 
@@ -33,39 +37,30 @@ gsap.from(".hero-title", {
 
 
 
+
+
 /* =========================
 MANIFEST TITLE
 ========================= */
 
 
-gsap.fromTo(".manifest-content h1",
+gsap.from(".manifest-content h1", {
 
-{
 
     y:70,
 
     opacity:0,
 
-    filter:"blur(12px)"
+    filter:"blur(10px)",
 
-},
-
-{
-
-    y:0,
-
-    opacity:1,
-
-    filter:"blur(0px)",
-
-    duration:1.2,
-
-    delay:.3,
+    duration:1.1,
 
     ease:"power4.out",
 
 
+
     scrollTrigger:{
+
 
         trigger:".manifest-block",
 
@@ -73,9 +68,12 @@ gsap.fromTo(".manifest-content h1",
 
         once:true
 
+
     }
 
+
 });
+
 
 
 
@@ -86,100 +84,31 @@ gsap.fromTo(".manifest-content h1",
 
 /* =========================
 MANIFEST SLOGAN
+Пришел. Увидел. Запилил.
 ========================= */
 
 
-const sloganWords = document.querySelectorAll(
-    ".manifest-slogan .word"
-);
+gsap.from(".manifest-slogan .word", {
 
 
-
-if(sloganWords.length){
-
-
-    gsap.fromTo(
-
-        sloganWords,
-
-
-        {
-
-            opacity:0,
-
-            y:40,
-
-            filter:"blur(10px)"
-
-        },
-
-
-        {
-
-            opacity:1,
-
-            y:0,
-
-            filter:"blur(0px)",
-
-            duration:.6,
-
-            stagger:.18,
-
-            ease:"power3.out",
-
-
-            scrollTrigger:{
-
-                trigger:".manifest-slogan",
-
-                start:"top 85%",
-
-                once:true
-
-            }
-
-
-        }
-
-    );
-
-
-}
-
-
-
-
-
-
-
-
-/* =========================
-DESCRIPTION
-========================= */
-
-
-gsap.from(".description-block p",{
-
-
-    y:60,
+    y:40,
 
     opacity:0,
 
-    filter:"blur(10px)",
+    duration:.7,
 
-    duration:1,
+    stagger:.12,
 
+    ease:"power3.out",
 
-    ease:"power4.out",
 
 
     scrollTrigger:{
 
 
-        trigger:".description-block",
+        trigger:".manifest-block",
 
-        start:"top 70%",
+        start:"top 50%",
 
 
         once:true
@@ -199,30 +128,34 @@ gsap.from(".description-block p",{
 
 
 /* =========================
-IMAGE REVEAL
+CARD TEXT
 ========================= */
 
 
-document.querySelectorAll(".image-block img").forEach(img=>{
+document.querySelectorAll(".card-block .text").forEach((text)=>{
 
 
-    gsap.from(img,{
+    gsap.from(text.children, {
+
+
+        y:40,
 
         opacity:0,
 
-        scale:1.05,
+        duration:.8,
 
-        duration:1.2,
+        stagger:.15,
 
         ease:"power3.out",
+
 
 
         scrollTrigger:{
 
 
-            trigger:img,
+            trigger:text,
 
-            start:"top 80%",
+            start:"top 75%",
 
 
             once:true
