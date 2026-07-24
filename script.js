@@ -1,10 +1,8 @@
- /* =========================
+/* =========================
 GSAP INIT
 ========================= */
 
-
 gsap.registerPlugin(ScrollTrigger);
-
 
 
 
@@ -40,14 +38,25 @@ MANIFEST TITLE
 ========================= */
 
 
-gsap.from(".manifest-content h1", {
+gsap.fromTo(".manifest-content h1",
 
+{
 
     y:70,
 
     opacity:0,
 
-    filter:"blur(12px)",
+    filter:"blur(12px)"
+
+},
+
+{
+
+    y:0,
+
+    opacity:1,
+
+    filter:"blur(0px)",
 
     duration:1.2,
 
@@ -56,20 +65,15 @@ gsap.from(".manifest-content h1", {
     ease:"power4.out",
 
 
-
     scrollTrigger:{
-
 
         trigger:".manifest-block",
 
-        start:"top 60%",
-
+        start:"top 70%",
 
         once:true
 
-
     }
-
 
 });
 
@@ -94,48 +98,54 @@ const sloganWords = document.querySelectorAll(
 if(sloganWords.length){
 
 
+    gsap.fromTo(
 
-    gsap.timeline({
-
-        scrollTrigger:{
-
-
-            trigger:".manifest-block",
-
-            start:"top 35%",
+        sloganWords,
 
 
-            once:true
+        {
+
+            opacity:0,
+
+            y:40,
+
+            filter:"blur(10px)"
+
+        },
+
+
+        {
+
+            opacity:1,
+
+            y:0,
+
+            filter:"blur(0px)",
+
+            duration:.6,
+
+            stagger:.18,
+
+            ease:"power3.out",
+
+
+            scrollTrigger:{
+
+                trigger:".manifest-slogan",
+
+                start:"top 85%",
+
+                once:true
+
+            }
 
 
         }
 
-
-    })
-
-
-    .to(sloganWords,{
-
-
-        opacity:1,
-
-        filter:"blur(0)",
-
-        y:0,
-
-        duration:.5,
-
-        stagger:.18,
-
-        ease:"power3.out"
-
-
-    });
-
+    );
 
 
 }
-
 
 
 
@@ -152,17 +162,16 @@ DESCRIPTION
 gsap.from(".description-block p",{
 
 
-    y:70,
+    y:60,
 
     opacity:0,
 
     filter:"blur(10px)",
 
-    duration:1.1,
+    duration:1,
 
 
     ease:"power4.out",
-
 
 
     scrollTrigger:{
@@ -170,7 +179,7 @@ gsap.from(".description-block p",{
 
         trigger:".description-block",
 
-        start:"top 65%",
+        start:"top 70%",
 
 
         once:true
@@ -194,31 +203,35 @@ IMAGE REVEAL
 ========================= */
 
 
-gsap.from(".image-first img, .image-second img, .image-third img",{
+document.querySelectorAll(".image-block img").forEach(img=>{
 
 
-    scale:1.08,
+    gsap.from(img,{
 
-    opacity:0,
+        opacity:0,
 
-    duration:1.4,
+        scale:1.05,
 
-    ease:"power3.out",
+        duration:1.2,
 
-
-
-    scrollTrigger:{
+        ease:"power3.out",
 
 
-        trigger:".image-block",
-
-        start:"top 70%",
+        scrollTrigger:{
 
 
-        once:true
+            trigger:img,
+
+            start:"top 80%",
 
 
-    }
+            once:true
+
+
+        }
+
+
+    });
 
 
 });
@@ -232,7 +245,7 @@ gsap.from(".image-first img, .image-second img, .image-third img",{
 
 
 /* =========================
-STICKY STACK REFRESH
+REFRESH
 ========================= */
 
 
@@ -243,8 +256,6 @@ window.addEventListener("load",()=>{
 
 
 });
-
-
 
 
 
