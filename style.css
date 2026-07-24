@@ -552,7 +552,6 @@ height:75%;
 
 /* ================= MOBILE ================= */
 
-
 @media(max-width:768px){
 
 
@@ -561,6 +560,7 @@ height:75%;
 font-size:72px;
 
 }
+
 
 
 /* ---------- MANIFEST ---------- */
@@ -603,12 +603,14 @@ line-height:1.15;
 
 
 
-/* ---------- IMAGES ---------- */
+
+
+/* ---------- IMAGES ONLY ---------- */
 
 
 .image-block{
 
-height:100vh;
+height:100vw;
 
 }
 
@@ -617,7 +619,9 @@ height:100vh;
 
 position:relative;
 
-height:100vh;
+height:100vw;
+
+width:100%;
 
 }
 
@@ -630,7 +634,7 @@ height:100%;
 
 object-fit:cover;
 
-object-position:right center;
+object-position:left center;
 
 }
 
@@ -658,7 +662,13 @@ font-size:22px;
 
 
 
-/* ---------- CARDS ---------- */
+
+
+
+/* ================= CARDS ================= */
+
+
+/* карточки остаются квадратными */
 
 
 .card-block{
@@ -679,8 +689,9 @@ overflow:hidden;
 
 
 
-/* квадрат изображения */
 
+
+/* верх карточки */
 
 .symbol{
 
@@ -688,22 +699,28 @@ order:1;
 
 width:100%;
 
-height:100vw;
+height:50vh;
 
 flex:none;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
 
 }
 
 
 
-/* большие символы */
+/* увеличиваем символы */
 
 
 .symbol img{
 
-width:90%;
+width:92%;
 
-height:90%;
+height:92%;
 
 object-fit:contain;
 
@@ -711,20 +728,29 @@ object-fit:contain;
 
 
 
-/* текст карточки */
+
+
+/* нижняя часть карточки */
 
 
 .text{
 
 order:2;
 
-flex:1;
+height:50vh;
 
-padding:26px;
+padding:28px 24px;
+
+display:flex;
+
+flex-direction:column;
 
 justify-content:space-between;
 
 }
+
+
+
 
 
 .text h2{
@@ -732,6 +758,8 @@ justify-content:space-between;
 font-size:34px;
 
 line-height:.95;
+
+margin:0;
 
 }
 
@@ -742,19 +770,57 @@ font-size:18px;
 
 line-height:1.2;
 
+margin:0;
+
 max-width:none;
 
 }
 
 
 
-/* убираем увеличение */
+
+/* убираем десктопные эффекты */
+
 
 .card-block:hover .symbol img{
 
 transform:none;
 
 }
+
+
+
+
+/* отдельные картинки */
+
+
+.image-second,
+.image-third{
+
+height:100vw;
+
+}
+
+
+.image-second .image-wrapper,
+.image-third .image-wrapper{
+
+height:100vw;
+
+position:relative;
+
+}
+
+
+.image-second img,
+.image-third img{
+
+object-fit:cover;
+
+object-position:left center;
+
+}
+
 
 
 }
@@ -774,11 +840,13 @@ font-size:56px;
 }
 
 
+
 .manifest-content h1{
 
 font-size:32px;
 
 }
+
 
 
 .manifest-content p{
@@ -788,27 +856,71 @@ font-size:20px;
 }
 
 
-.symbol{
+
+/* фото */
+
+.image-block{
 
 height:100vw;
 
 }
 
 
-.symbol img{
+.image-wrapper{
 
-width:94%;
-
-height:94%;
+height:100vw;
 
 }
+
+
+
+.image-wrapper img{
+
+object-position:left center;
+
+}
+
+
+
+
+
+/* карточки */
+
+
+.card-block{
+
+height:100vh;
+
+}
+
+
+
+.symbol{
+
+height:50vh;
+
+}
+
+
+
+.symbol img{
+
+width:95%;
+
+height:95%;
+
+}
+
 
 
 .text{
 
+height:50vh;
+
 padding:22px;
 
 }
+
 
 
 .text h2{
@@ -818,11 +930,13 @@ font-size:30px;
 }
 
 
+
 .text p{
 
 font-size:17px;
 
 }
+
 
 
 .type-text{
@@ -833,7 +947,6 @@ font-size:20px;
 
 
 }
-
 
 
 /* ================= IMAGE PAUSE FIX ================= */
