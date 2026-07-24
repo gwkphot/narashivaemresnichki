@@ -21,7 +21,6 @@ width:100%;
 }
 
 
-
 /* ================= HERO ================= */
 
 
@@ -44,7 +43,6 @@ overflow:hidden;
 }
 
 
-
 .hero-title{
 
 font-family:'Montserrat',sans-serif;
@@ -64,6 +62,8 @@ text-align:center;
 user-select:none;
 
 }
+
+
 
 /* ================= MANIFEST ================= */
 
@@ -87,7 +87,6 @@ overflow:hidden;
 }
 
 
-
 .manifest-content{
 
 width:100%;
@@ -99,7 +98,6 @@ display:flex;
 flex-direction:column;
 
 }
-
 
 
 .manifest-content h1{
@@ -121,7 +119,6 @@ margin:0;
 max-width:1400px;
 
 }
-
 
 
 .manifest-content p{
@@ -146,52 +143,8 @@ margin-bottom:0;
 
 }
 
-@media(max-width:768px){
 
 
-.manifest-block{
-
-height:auto;
-
-min-height:90vh;
-
-padding:40px 24px 50px;
-
-}
-
-
-
-.manifest-content{
-
-gap:50px;
-
-}
-
-
-
-.manifest-content h1{
-
-font-size:42px;
-
-line-height:.95;
-
-}
-
-
-
-.manifest-content p{
-
-margin-top:0;
-
-font-size:24px;
-
-line-height:1.15;
-
-}
-
-
-
-}
 
 /* ================= IMAGE BLOCK ================= */
 
@@ -205,7 +158,6 @@ position:relative;
 z-index:3;
 
 }
-
 
 
 .image-wrapper{
@@ -225,7 +177,6 @@ z-index:1;
 }
 
 
-
 .image-wrapper img{
 
 width:100%;
@@ -234,12 +185,35 @@ height:100%;
 
 object-fit:cover;
 
-object-position:center top;
+object-position:center center;
 
 display:block;
 
 }
 
+
+
+/* отдельные изображения */
+
+.image-first .image-wrapper img{
+
+object-position:center center;
+
+}
+
+
+.image-second .image-wrapper img{
+
+object-position:center center;
+
+}
+
+
+.image-third .image-wrapper img{
+
+object-position:center center;
+
+}
 
 
 
@@ -284,7 +258,7 @@ left:50%;
 
 top:22%;
 
-transform:translate(-50%,calc(-50% - 70px));
+transform:translateX(-50%);
 
 width:100%;
 
@@ -297,7 +271,6 @@ z-index:10;
 pointer-events:none;
 
 }
-
 
 
 .type-text{
@@ -329,7 +302,6 @@ white-space:nowrap;
 }
 
 
-
 .type-text .word{
 
 display:inline-block;
@@ -339,6 +311,8 @@ opacity:0;
 filter:blur(6px);
 
 }
+
+
 
 /* ================= CARDS ================= */
 
@@ -367,16 +341,11 @@ box-shadow:0 -20px 40px rgba(0,0,0,.08);
 
 
 
-/* последняя карточка закрывает фото */
-
-
 .instruments{
 
 z-index:5;
 
 }
-
-
 
 
 
@@ -391,8 +360,6 @@ justify-content:center;
 overflow:hidden;
 
 }
-
-
 
 
 
@@ -421,8 +388,6 @@ background:#6A4CFF;
 
 
 
-
-
 /* ================= SYMBOL ================= */
 
 
@@ -441,7 +406,6 @@ justify-content:center;
 }
 
 
-
 .symbol img{
 
 width:min(72vh,680px);
@@ -455,16 +419,11 @@ transition:transform .6s cubic-bezier(.22,1,.36,1);
 }
 
 
-
 .card-block:hover .symbol img{
 
 transform:scale(1.03);
 
 }
-
-
-
-
 
 /* ================= TEXT ================= */
 
@@ -498,18 +457,17 @@ font-family:'Inter',sans-serif;
 
 font-weight:600;
 
-font-size:clamp(52px,4vw,72px);
+font-size:clamp(42px,3.2vw,60px);
 
-line-height:.9;
+line-height:.95;
 
-letter-spacing:-.05em;
+letter-spacing:-.045em;
 
-margin-bottom:18px;
+margin:0;
 
 color:#333333;
 
 }
-
 
 
 .text p{
@@ -534,8 +492,6 @@ max-width:700px;
 
 
 
-
-
 /* ================= TYPOGRAPHY ================= */
 
 
@@ -552,18 +508,12 @@ text-wrap:pretty;
 
 }
 
+
+
 /* ================= TABLET ================= */
 
 
 @media(max-width:1024px){
-
-
-.hero-title{
-
-font-size:clamp(72px,14vw,170px);
-
-}
-
 
 
 .text{
@@ -573,7 +523,6 @@ padding:50px;
 }
 
 
-
 .text h2{
 
 font-size:48px;
@@ -581,13 +530,11 @@ font-size:48px;
 }
 
 
-
 .text p{
 
 font-size:22px;
 
 }
-
 
 
 .symbol img{
@@ -599,10 +546,7 @@ height:75%;
 }
 
 
-
 }
-
-
 
 
 
@@ -619,92 +563,184 @@ font-size:72px;
 }
 
 
+/* ---------- MANIFEST ---------- */
 
-.image-caption{
 
-padding:0 24px;
+.manifest-block{
+
+height:100vh;
+
+padding:40px 24px 50px;
+
+}
+
+
+.manifest-content{
+
+height:100%;
+
+}
+
+
+.manifest-content h1{
+
+font-size:38px;
+
+line-height:.95;
+
+}
+
+
+.manifest-content p{
+
+margin-top:auto;
+
+font-size:22px;
+
+line-height:1.15;
 
 }
 
 
 
-.type-text{
-
-font-size:clamp(18px,6vw,30px);
-
-letter-spacing:-.04em;
-
-gap:.25em;
-
-white-space:nowrap;
-
-}
+/* ---------- IMAGES ---------- */
 
 
-
-.card-block{
-
-display:flex;
-
-flex-direction:column;
+.image-block{
 
 height:100vh;
 
 }
 
 
+.image-wrapper{
+
+position:relative;
+
+height:100vh;
+
+}
+
+
+.image-wrapper img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+object-position:right center;
+
+}
+
+
+
+/* ---------- CAPTION ---------- */
+
+
+.image-caption{
+
+top:14%;
+
+transform:translateX(-50%);
+
+padding:0 20px;
+
+}
+
+
+.type-text{
+
+font-size:22px;
+
+}
+
+
+
+/* ---------- CARDS ---------- */
+
+
+.card-block{
+
+position:sticky;
+
+top:0;
+
+height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+overflow:hidden;
+
+}
+
+
+
+/* квадрат изображения */
+
 
 .symbol{
 
 order:1;
 
-height:50%;
+width:100%;
+
+height:100vw;
+
+flex:none;
 
 }
 
+
+
+/* большие символы */
+
+
+.symbol img{
+
+width:90%;
+
+height:90%;
+
+object-fit:contain;
+
+}
+
+
+
+/* текст карточки */
 
 
 .text{
 
 order:2;
 
-height:50%;
+flex:1;
 
-padding:28px 24px;
+padding:26px;
 
-justify-content:flex-start;
-
-}
-
-
-
-.symbol img{
-
-width:78%;
-
-height:78%;
+justify-content:space-between;
 
 }
-
 
 
 .text h2{
 
-font-size:38px;
+font-size:34px;
 
-line-height:.9;
-
-margin-bottom:18px;
+line-height:.95;
 
 }
 
 
-
 .text p{
 
-font-size:20px;
+font-size:18px;
 
-line-height:1.15;
+line-height:1.2;
 
 max-width:none;
 
@@ -712,9 +748,16 @@ max-width:none;
 
 
 
+/* убираем увеличение */
+
+.card-block:hover .symbol img{
+
+transform:none;
+
 }
 
 
+}
 
 
 
@@ -731,25 +774,34 @@ font-size:56px;
 }
 
 
+.manifest-content h1{
 
-.type-text{
-
-font-size:20px;
-
-gap:.2em;
+font-size:32px;
 
 }
 
+
+.manifest-content p{
+
+font-size:20px;
+
+}
+
+
+.symbol{
+
+height:100vw;
+
+}
 
 
 .symbol img{
 
-width:72%;
+width:94%;
 
-height:72%;
+height:94%;
 
 }
-
 
 
 .text{
@@ -759,65 +811,61 @@ padding:22px;
 }
 
 
-
 .text h2{
 
-font-size:32px;
+font-size:30px;
 
 }
-
 
 
 .text p{
 
-font-size:18px;
+font-size:17px;
+
+}
+
+
+.type-text{
+
+font-size:20px;
+
+}
+
 
 }
 
 
 
-}
-
-/* ================= IMAGE PAUSE ================= */
-
-.image-pause{
-    height:100vh;
-}
+/* ================= IMAGE PAUSE FIX ================= */
 
 
-.image-pause .image-wrapper{
-    position:sticky;
-    top:0;
-    height:100vh;
-}
+.image-second,
+.image-third{
 
+height:100vh;
 
+position:relative;
 
-/* ================= INSTRUMENTS OVER IMAGE ================= */
+z-index:20;
 
-.instruments{
-    position:sticky;
-    top:0;
-    z-index:10;
-}
-
-/* ================= IMAGE 3 FINAL ================= */
-
-.image-final{
-    height:100vh;
-    position:relative;
-    z-index:30;
 }
 
 
-.image-final .image-wrapper{
-    position:relative;
-    top:auto;
-    height:100vh;
+.image-second .image-wrapper,
+.image-third .image-wrapper{
+
+position:relative;
+
+height:100vh;
+
+top:auto;
+
+z-index:21;
+
+}
 
 
-.manifest-content h1 span,
-.manifest-content p{
+.image-third img{
 
 display:block;
 
