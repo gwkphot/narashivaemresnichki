@@ -1,4 +1,12 @@
- gsap.registerPlugin(ScrollTrigger);
+ /* =========================
+GSAP INIT
+========================= */
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+
+
 
 
 
@@ -13,11 +21,11 @@ gsap.from(".hero-title", {
 
     opacity:0,
 
-    scale:.95,
+    scale:.96,
 
     duration:1.2,
 
-    ease:"power3.out"
+    ease:"power4.out"
 
 });
 
@@ -25,23 +33,28 @@ gsap.from(".hero-title", {
 
 
 
+
+
 /* =========================
-MANIFEST REVEAL
+MANIFEST TITLE
 ========================= */
 
 
 gsap.from(".manifest-content h1", {
 
 
-    y:120,
+    y:70,
 
     opacity:0,
 
-    filter:"blur(10px)",
+    filter:"blur(12px)",
 
     duration:1.2,
 
+    delay:.3,
+
     ease:"power4.out",
+
 
 
     scrollTrigger:{
@@ -49,7 +62,10 @@ gsap.from(".manifest-content h1", {
 
         trigger:".manifest-block",
 
-        start:"top 75%",
+        start:"top 60%",
+
+
+        once:true
 
 
     }
@@ -57,37 +73,6 @@ gsap.from(".manifest-content h1", {
 
 });
 
-
-
-
-gsap.from(".manifest-content p", {
-
-
-    y:80,
-
-    opacity:0,
-
-    filter:"blur(8px)",
-
-    duration:1,
-
-    delay:.25,
-
-    ease:"power4.out",
-
-
-    scrollTrigger:{
-
-
-        trigger:".manifest-block",
-
-        start:"top 65%",
-
-
-    }
-
-
-});
 
 
 
@@ -96,26 +81,32 @@ gsap.from(".manifest-content p", {
 
 
 /* =========================
-IMAGE TEXT
-WORD REVEAL
+MANIFEST SLOGAN
 ========================= */
 
 
-const words = document.querySelectorAll(".type-text .word");
+const sloganWords = document.querySelectorAll(
+    ".manifest-slogan .word"
+);
 
 
-if(words.length){
+
+if(sloganWords.length){
+
 
 
     gsap.timeline({
 
         scrollTrigger:{
 
-            trigger:".image-first",
 
-            start:"top top",
+            trigger:".manifest-block",
+
+            start:"top 35%",
+
 
             once:true
+
 
         }
 
@@ -123,43 +114,24 @@ if(words.length){
     })
 
 
-    .to(words[0],{
+    .to(sloganWords,{
+
 
         opacity:1,
 
-        filter:"blur(0px)",
+        filter:"blur(0)",
 
-        duration:.35,
+        y:0,
 
-        ease:"power3.out"
+        duration:.5,
 
-    })
-
-
-    .to(words[1],{
-
-        opacity:1,
-
-        filter:"blur(0px)",
-
-        duration:.35,
+        stagger:.18,
 
         ease:"power3.out"
 
-    }, "+=0.12")
 
+    });
 
-    .to(words[2],{
-
-        opacity:1,
-
-        filter:"blur(0px)",
-
-        duration:.35,
-
-        ease:"power3.out"
-
-    }, "+=0.12");
 
 
 }
@@ -170,57 +142,38 @@ if(words.length){
 
 
 
+
+
 /* =========================
-CARD STACK
+DESCRIPTION
 ========================= */
 
 
-const cards=document.querySelectorAll(".card-block");
+gsap.from(".description-block p",{
 
 
-cards.forEach((card,index)=>{
+    y:70,
+
+    opacity:0,
+
+    filter:"blur(10px)",
+
+    duration:1.1,
 
 
-    gsap.set(card,{
-
-        zIndex:index+2
-
-    });
+    ease:"power4.out",
 
 
 
-    // десктопный эффект глубины
-
-    if(window.innerWidth > 768){
+    scrollTrigger:{
 
 
-        if(index !== cards.length-1){
+        trigger:".description-block",
+
+        start:"top 65%",
 
 
-            gsap.to(card,{
-
-
-                scale:.965,
-
-
-                scrollTrigger:{
-
-
-                    trigger:card,
-
-                    start:"top top",
-
-                    end:"bottom top",
-
-                    scrub:true
-
-                }
-
-
-            });
-
-
-        }
+        once:true
 
 
     }
@@ -235,42 +188,34 @@ cards.forEach((card,index)=>{
 
 
 
+
 /* =========================
-SYMBOL PARALLAX
+IMAGE REVEAL
 ========================= */
 
 
-document.querySelectorAll(".symbol img").forEach(img=>{
+gsap.from(".image-first img, .image-second img, .image-third img",{
 
 
-    if(window.innerWidth > 768){
+    scale:1.08,
+
+    opacity:0,
+
+    duration:1.4,
+
+    ease:"power3.out",
 
 
-        gsap.to(img,{
+
+    scrollTrigger:{
 
 
-            y:-30,
+        trigger:".image-block",
+
+        start:"top 70%",
 
 
-            ease:"none",
-
-
-            scrollTrigger:{
-
-
-                trigger:img.closest(".card-block"),
-
-                start:"top bottom",
-
-                end:"bottom top",
-
-                scrub:true
-
-
-            }
-
-
-        });
+        once:true
 
 
     }
@@ -284,53 +229,10 @@ document.querySelectorAll(".symbol img").forEach(img=>{
 
 
 
-/* =========================
-TEXT REVEAL
-========================= */
-
-
-document.querySelectorAll(".text").forEach(block=>{
-
-
-    gsap.from(block.children,{
-
-
-        opacity:0,
-
-        y:35,
-
-        duration:.8,
-
-        stagger:.15,
-
-
-
-        scrollTrigger:{
-
-
-            trigger:block,
-
-            start:"top 70%",
-
-            once:true
-
-
-        }
-
-
-    });
-
-
-});
-
-
-
-
-
 
 
 /* =========================
-REFRESH
+STICKY STACK REFRESH
 ========================= */
 
 
@@ -341,6 +243,8 @@ window.addEventListener("load",()=>{
 
 
 });
+
+
 
 
 
