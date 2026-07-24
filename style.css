@@ -1,24 +1,49 @@
 *{
+
 margin:0;
 padding:0;
+
 box-sizing:border-box;
+
 }
+
+
 
 html{
+
 scroll-behavior:smooth;
+
 }
+
+
 
 body{
+
 background:#d9d9d9;
+
 font-family:'Inter',sans-serif;
+
 overflow-x:hidden;
-color:#111;
+
+color:#333333;
+
 }
 
+
+
 .wrap{
-position:relative;
+
 width:100%;
+
+position:relative;
+
 }
+
+
+
+
+
+
 
 
 /* ================= HERO ================= */
@@ -36,11 +61,10 @@ justify-content:center;
 
 background:#7CFF2E;
 
-position:relative;
-
 overflow:hidden;
 
 }
+
 
 
 .hero-title{
@@ -59,9 +83,72 @@ color:#1A1A1A;
 
 text-align:center;
 
-user-select:none;
+}
+
+
+
+
+
+
+
+
+
+/* ================= INTRO STACK ================= */
+
+
+.intro-stack{
+
+position:relative;
 
 }
+
+
+
+
+
+.intro-stack .manifest-block,
+.intro-stack .description-block,
+.intro-stack .image-first{
+
+position:sticky;
+
+top:0;
+
+}
+
+
+
+
+
+
+
+.intro-stack .manifest-block{
+
+z-index:1;
+
+}
+
+
+
+.intro-stack .description-block{
+
+z-index:2;
+
+}
+
+
+
+.intro-stack .image-first{
+
+z-index:3;
+
+}
+
+
+
+
+
+
 
 
 
@@ -74,22 +161,13 @@ height:100vh;
 
 background:#d9d9d9;
 
-display:flex;
-
-flex-direction:column;
-
-justify-content:space-between;
-
 padding:70px 80px 80px;
-
-overflow:hidden;
 
 }
 
 
-.manifest-content{
 
-width:100%;
+.manifest-content{
 
 height:100%;
 
@@ -98,6 +176,7 @@ display:flex;
 flex-direction:column;
 
 }
+
 
 
 .manifest-content h1{
@@ -114,20 +193,82 @@ letter-spacing:-.055em;
 
 color:#333333;
 
-margin:0;
+}
 
-max-width:1400px;
+
+
+
+
+.manifest-slogan{
+
+margin-top:auto;
+
+margin-left:auto;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:flex-end;
+
+font-family:'Inter',sans-serif;
+
+font-weight:500;
+
+font-size:clamp(48px,5vw,82px);
+
+line-height:.95;
+
+letter-spacing:-.05em;
+
+color:#333333;
 
 }
 
 
-.manifest-content p{
+
+.manifest-slogan .word{
+
+opacity:0;
+
+filter:blur(8px);
+
+}
+
+
+
+
+
+
+
+
+
+/* ================= DESCRIPTION ================= */
+
+
+.description-block{
+
+height:100vh;
+
+background:#ff4d1a;
+
+padding:70px 80px;
+
+display:flex;
+
+align-items:flex-end;
+
+}
+
+
+
+.description-block p{
 
 font-family:'Inter',sans-serif;
 
-font-size:clamp(28px,3vw,54px);
-
 font-weight:500;
+
+font-size:clamp(30px,3vw,54px);
 
 line-height:1.05;
 
@@ -135,36 +276,34 @@ letter-spacing:-.04em;
 
 color:#333333;
 
-max-width:none;
-
-margin-top:auto;
-
-margin-bottom:0;
+max-width:1600px;
 
 }
 
 
 
 
-/* ================= IMAGE BLOCK ================= */
+
+
+
+
+
+/* ================= IMAGE BLOCKS ================= */
 
 
 .image-block{
 
-height:200vh;
+height:100vh;
 
 position:relative;
-
-z-index:3;
 
 }
 
 
+
+
+
 .image-wrapper{
-
-position:sticky;
-
-top:0;
 
 width:100%;
 
@@ -172,9 +311,10 @@ height:100vh;
 
 overflow:hidden;
 
-z-index:1;
-
 }
+
+
+
 
 
 .image-wrapper img{
@@ -183,147 +323,48 @@ width:100%;
 
 height:100%;
 
+display:block;
+
 object-fit:cover;
 
 object-position:center center;
 
-display:block;
+}
+
+
+
+
+
+
+
+
+
+/* ================= CARD GROUPS ================= */
+
+
+.cards-group{
+
+position:relative;
 
 }
 
 
 
-/* отдельные изображения */
 
-.image-first .image-wrapper img{
 
-object-position:center center;
 
-}
 
 
-.image-second .image-wrapper img{
-
-object-position:center center;
-
-}
-
-
-.image-third .image-wrapper img{
-
-object-position:center center;
-
-}
-
-
-
-/* ================= IMAGE OVERLAY ================= */
-
-
-.image-wrapper::after{
-
-content:"";
-
-position:absolute;
-
-inset:0;
-
-pointer-events:none;
-
-
-background:linear-gradient(
-
-180deg,
-
-rgba(255,255,255,.03) 0%,
-
-rgba(0,0,0,0) 35%,
-
-rgba(0,0,0,.08) 100%
-
-);
-
-}
-
-
-
-/* ================= CAPTION ================= */
-
-
-.image-caption{
-
-position:absolute;
-
-left:50%;
-
-top:22%;
-
-transform:translateX(-50%);
-
-width:100%;
-
-padding:0 4vw;
-
-text-align:center;
-
-z-index:10;
-
-pointer-events:none;
-
-}
-
-
-.type-text{
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-gap:.35em;
-
-width:100%;
-
-font-family:'Inter',sans-serif;
-
-font-weight:500;
-
-font-size:clamp(26px,2.8vw,52px);
-
-line-height:1;
-
-letter-spacing:-.05em;
-
-color:#333333;
-
-white-space:nowrap;
-
-}
-
-
-.type-text .word{
-
-display:inline-block;
-
-opacity:0;
-
-filter:blur(6px);
-
-}
-
-
-
-/* ================= CARDS ================= */
+/* ================= STICKY CARDS ================= */
 
 
 .card-block{
 
+height:100vh;
+
 position:sticky;
 
 top:0;
-
-height:100vh;
 
 display:grid;
 
@@ -331,22 +372,35 @@ grid-template-columns:1fr 1fr;
 
 overflow:hidden;
 
-will-change:transform;
+}
+
+
+
+
+
+
+.card-block:nth-child(1){
 
 z-index:2;
 
-box-shadow:0 -20px 40px rgba(0,0,0,.08);
+}
+
+
+
+.card-block:nth-child(2){
+
+z-index:3;
 
 }
 
 
 
-.instruments{
 
-z-index:5;
 
-}
 
+
+
+/* ================= CARD PARTS ================= */
 
 
 .half{
@@ -363,7 +417,10 @@ overflow:hidden;
 
 
 
-/* ================= COLORS ================= */
+
+
+
+/* COLORS */
 
 
 .orange{
@@ -388,14 +445,16 @@ background:#6A4CFF;
 
 
 
+
+
+
+
+
+
 /* ================= SYMBOL ================= */
 
 
 .symbol{
-
-position:relative;
-
-z-index:2;
 
 display:flex;
 
@@ -406,6 +465,7 @@ justify-content:center;
 }
 
 
+
 .symbol img{
 
 width:min(72vh,680px);
@@ -414,16 +474,14 @@ height:min(72vh,680px);
 
 object-fit:contain;
 
-transition:transform .6s cubic-bezier(.22,1,.36,1);
-
 }
 
 
-.card-block:hover .symbol img{
 
-transform:scale(1.03);
 
-}
+
+
+
 
 /* ================= TEXT ================= */
 
@@ -442,13 +500,8 @@ justify-content:space-between;
 
 align-items:flex-start;
 
-color:#111;
-
-position:relative;
-
-z-index:3;
-
 }
+
 
 
 .text h2{
@@ -463,11 +516,10 @@ line-height:.95;
 
 letter-spacing:-.045em;
 
-margin:0;
-
 color:#333333;
 
 }
+
 
 
 .text p{
@@ -484,36 +536,16 @@ letter-spacing:-.025em;
 
 color:#333333;
 
-opacity:.95;
-
 max-width:700px;
 
 }
-
-
-
-/* ================= TYPOGRAPHY ================= */
-
-
-h2{
-
-text-wrap:balance;
-
-}
-
-
-p{
-
-text-wrap:pretty;
-
-}
-
 
 
 /* ================= TABLET ================= */
 
 
 @media(max-width:1024px){
+
 
 
 .text{
@@ -523,6 +555,7 @@ padding:50px;
 }
 
 
+
 .text h2{
 
 font-size:48px;
@@ -530,11 +563,13 @@ font-size:48px;
 }
 
 
+
 .text p{
 
 font-size:22px;
 
 }
+
 
 
 .symbol img{
@@ -546,13 +581,25 @@ height:75%;
 }
 
 
+
 }
+
+
+
+
+
+
 
 
 
 /* ================= MOBILE ================= */
 
+
 @media(max-width:768px){
+
+
+
+/* ================= HERO ================= */
 
 
 .hero-title{
@@ -563,10 +610,31 @@ font-size:72px;
 
 
 
-/* ---------- MANIFEST ---------- */
+
+
+
+
+
+/* ================= INTRO STACK ================= */
+
+
+.intro-stack .manifest-block,
+.intro-stack .description-block,
+.intro-stack .image-first{
+
+
+position:sticky;
+
+top:0;
+
+}
+
+
+
 
 
 .manifest-block{
+
 
 height:100vh;
 
@@ -575,27 +643,58 @@ padding:40px 24px 50px;
 }
 
 
-.manifest-content{
 
-height:100%;
-
-}
 
 
 .manifest-content h1{
 
-font-size:38px;
 
-line-height:.95;
+font-size:38px;
 
 }
 
 
-.manifest-content p{
 
-margin-top:auto;
 
-font-size:22px;
+
+.manifest-slogan{
+
+
+font-size:38px;
+
+}
+
+
+
+
+
+
+
+
+
+/* ================= DESCRIPTION ================= */
+
+
+
+.description-block{
+
+
+height:100vh;
+
+padding:40px 24px 60px;
+
+align-items:flex-end;
+
+}
+
+
+
+
+
+.description-block p{
+
+
+font-size:24px;
 
 line-height:1.15;
 
@@ -605,19 +704,27 @@ line-height:1.15;
 
 
 
-/* ---------- IMAGES ONLY ---------- */
+
+
+
+
+/* ================= IMAGES ================= */
+
 
 
 .image-block{
 
+
 height:100vw;
 
 }
+
+
+
 
 
 .image-wrapper{
 
-position:relative;
 
 height:100vw;
 
@@ -626,39 +733,20 @@ width:100%;
 }
 
 
+
+
+
 .image-wrapper img{
 
-width:100%;
-
-height:100%;
 
 object-fit:cover;
 
-object-position:left center;
+object-position:center center;
 
 }
 
 
 
-/* ---------- CAPTION ---------- */
-
-
-.image-caption{
-
-top:14%;
-
-transform:translateX(-50%);
-
-padding:0 20px;
-
-}
-
-
-.type-text{
-
-font-size:22px;
-
-}
 
 
 
@@ -668,14 +756,9 @@ font-size:22px;
 /* ================= CARDS ================= */
 
 
-/* карточки остаются квадратными */
-
 
 .card-block{
 
-position:sticky;
-
-top:0;
 
 height:100vh;
 
@@ -683,40 +766,29 @@ display:flex;
 
 flex-direction:column;
 
-overflow:hidden;
-
 }
 
 
 
 
-
-/* верх карточки */
 
 .symbol{
 
-order:1;
-
-width:100%;
 
 height:50vh;
 
-flex:none;
+width:100%;
 
-display:flex;
-
-align-items:center;
-
-justify-content:center;
+order:1;
 
 }
 
 
 
-/* увеличиваем символы */
 
 
 .symbol img{
+
 
 width:92%;
 
@@ -730,22 +802,16 @@ object-fit:contain;
 
 
 
-/* нижняя часть карточки */
-
-
 .text{
 
-order:2;
 
 height:50vh;
 
+width:100%;
+
+order:2;
+
 padding:28px 24px;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:space-between;
 
 }
 
@@ -755,22 +821,23 @@ justify-content:space-between;
 
 .text h2{
 
+
 font-size:34px;
 
 line-height:.95;
 
-margin:0;
-
 }
+
+
+
 
 
 .text p{
 
+
 font-size:18px;
 
 line-height:1.2;
-
-margin:0;
 
 max-width:none;
 
@@ -779,51 +846,14 @@ max-width:none;
 
 
 
-/* убираем десктопные эффекты */
-
-
-.card-block:hover .symbol img{
-
-transform:none;
 
 }
 
 
 
 
-/* отдельные картинки */
 
 
-.image-second,
-.image-third{
-
-height:100vw;
-
-}
-
-
-.image-second .image-wrapper,
-.image-third .image-wrapper{
-
-height:100vw;
-
-position:relative;
-
-}
-
-
-.image-second img,
-.image-third img{
-
-object-fit:cover;
-
-object-position:left center;
-
-}
-
-
-
-}
 
 
 
@@ -833,153 +863,107 @@ object-position:left center;
 @media(max-width:480px){
 
 
+
 .hero-title{
+
 
 font-size:56px;
 
+
 }
+
+
+
+
 
 
 
 .manifest-content h1{
 
+
 font-size:32px;
+
 
 }
 
 
 
-.manifest-content p{
+.manifest-slogan{
+
+
+font-size:32px;
+
+
+}
+
+
+
+
+
+
+
+.description-block p{
+
 
 font-size:20px;
 
-}
-
-
-
-/* фото */
-
-.image-block{
-
-height:100vw;
-
-}
-
-
-.image-wrapper{
-
-height:100vw;
-
-}
-
-
-
-.image-wrapper img{
-
-object-position:left center;
 
 }
 
 
 
 
-
-/* карточки */
-
-
-.card-block{
-
-height:100vh;
-
-}
-
-
-
-.symbol{
-
-height:50vh;
-
-}
 
 
 
 .symbol img{
 
+
 width:95%;
+
 
 height:95%;
 
+
 }
+
+
+
+
 
 
 
 .text{
 
-height:50vh;
 
 padding:22px;
 
+
 }
+
+
 
 
 
 .text h2{
 
+
 font-size:30px;
 
+
 }
+
 
 
 
 .text p{
 
+
 font-size:17px;
 
-}
-
-
-
-.type-text{
-
-font-size:20px;
 
 }
 
 
-}
-
-
-/* ================= IMAGE PAUSE FIX ================= */
-
-
-.image-second,
-.image-third{
-
-height:100vh;
-
-position:relative;
-
-z-index:20;
-
-}
-
-
-.image-second .image-wrapper,
-.image-third .image-wrapper{
-
-position:relative;
-
-height:100vh;
-
-top:auto;
-
-z-index:21;
-
-}
-
-
-.image-third img{
-
-display:block;
 
 }
