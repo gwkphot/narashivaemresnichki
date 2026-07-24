@@ -1,6 +1,7 @@
  gsap.registerPlugin(ScrollTrigger);
 
 
+
 /* =========================
 HERO
 ========================= */
@@ -19,6 +20,10 @@ gsap.from(".hero-title", {
     ease:"power3.out"
 
 });
+
+
+
+
 
 /* =========================
 MANIFEST REVEAL
@@ -54,6 +59,7 @@ gsap.from(".manifest-content h1", {
 
 
 
+
 gsap.from(".manifest-content p", {
 
 
@@ -85,6 +91,10 @@ gsap.from(".manifest-content p", {
 
 
 
+
+
+
+
 /* =========================
 IMAGE TEXT
 WORD REVEAL
@@ -101,7 +111,7 @@ if(words.length){
 
         scrollTrigger:{
 
-            trigger:".image-block",
+            trigger:".image-first",
 
             start:"top top",
 
@@ -111,6 +121,7 @@ if(words.length){
 
 
     })
+
 
     .to(words[0],{
 
@@ -157,6 +168,8 @@ if(words.length){
 
 
 
+
+
 /* =========================
 CARD STACK
 ========================= */
@@ -170,46 +183,51 @@ cards.forEach((card,index)=>{
 
     gsap.set(card,{
 
-        zIndex:index+1
+        zIndex:index+2
 
     });
 
 
 
-    if(index !== cards.length-1){
+    // десктопный эффект глубины
+
+    if(window.innerWidth > 768){
 
 
-        gsap.to(card,{
+        if(index !== cards.length-1){
 
 
-            scale:.965,
+            gsap.to(card,{
 
 
-            scrollTrigger:{
+                scale:.965,
 
 
-                trigger:card,
+                scrollTrigger:{
 
 
-                start:"top top",
+                    trigger:card,
+
+                    start:"top top",
+
+                    end:"bottom top",
+
+                    scrub:true
+
+                }
 
 
-                end:"bottom top",
+            });
 
 
-                scrub:true
-
-
-            }
-
-
-        });
+        }
 
 
     }
 
 
 });
+
 
 
 
@@ -225,34 +243,37 @@ SYMBOL PARALLAX
 document.querySelectorAll(".symbol img").forEach(img=>{
 
 
-    gsap.to(img,{
+    if(window.innerWidth > 768){
 
 
-        y:-30,
+        gsap.to(img,{
 
 
-        ease:"none",
+            y:-30,
 
 
-        scrollTrigger:{
+            ease:"none",
 
 
-            trigger:img.closest(".card-block"),
+            scrollTrigger:{
 
 
-            start:"top bottom",
+                trigger:img.closest(".card-block"),
+
+                start:"top bottom",
+
+                end:"bottom top",
+
+                scrub:true
 
 
-            end:"bottom top",
+            }
 
 
-            scrub:true
+        });
 
 
-        }
-
-
-    });
+    }
 
 
 });
@@ -276,12 +297,9 @@ document.querySelectorAll(".text").forEach(block=>{
 
         opacity:0,
 
-
         y:35,
 
-
         duration:.8,
-
 
         stagger:.15,
 
@@ -292,9 +310,7 @@ document.querySelectorAll(".text").forEach(block=>{
 
             trigger:block,
 
-
             start:"top 70%",
-
 
             once:true
 
@@ -313,57 +329,25 @@ document.querySelectorAll(".text").forEach(block=>{
 
 
 
-
 /* =========================
-MOBILE ORDER
+REFRESH
 ========================= */
 
 
-function mobileOrder(){
+window.addEventListener("load",()=>{
 
 
-    if(window.innerWidth<=768){
+    ScrollTrigger.refresh();
 
 
-        document.querySelectorAll(".card-block").forEach(card=>{
-
-
-            const symbol=card.querySelector(".symbol");
-
-            const text=card.querySelector(".text");
+});
 
 
 
-            if(symbol && text){
+window.addEventListener("resize",()=>{
 
 
-                symbol.style.order="1";
+    ScrollTrigger.refresh();
 
 
-                text.style.order="2";
-
-
-            }
-
-
-        });
-
-
-    }
-
-
-}
-
-
-
-mobileOrder();
-
-
-
-window.addEventListener(
-
-    "resize",
-
-    mobileOrder
-
-);
+});
