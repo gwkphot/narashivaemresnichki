@@ -2,11 +2,7 @@
 GSAP INIT
 ========================= */
 
-
 gsap.registerPlugin(ScrollTrigger);
-
-
-
 
 
 
@@ -32,41 +28,64 @@ gsap.from(".hero-title", {
 });
 
 
-
-
-
-
-
-
-
 /* =========================
 MANIFEST TITLE
+LETTER REVEAL
 ========================= */
 
 
-gsap.from(".manifest-content h1", {
+window.addEventListener("load", ()=>{
 
 
-    y:70,
+const title = document.querySelector(".manifest-content h1");
 
-    opacity:0,
 
-    filter:"blur(10px)",
-
-    duration:1.1,
-
-    ease:"power4.out",
+if(!title) return;
 
 
 
-    scrollTrigger:{
+const nodes = [...title.childNodes];
 
 
-        trigger:".manifest-block",
+nodes.forEach(node=>{
 
-        start:"top 70%",
 
-        once:true
+    if(node.nodeType === 3){
+
+
+        const fragment = document.createDocumentFragment();
+
+
+        [...node.textContent].forEach(char=>{
+
+
+            if(char === " "){
+
+
+                fragment.appendChild(
+                    document.createTextNode(" ")
+                );
+
+
+            } else {
+
+
+                const span = document.createElement("span");
+
+                span.className = "manifest-letter";
+
+                span.textContent = char;
+
+
+                fragment.appendChild(span);
+
+            }
+
+
+        });
+
+
+        node.replaceWith(fragment);
 
 
     }
@@ -78,28 +97,39 @@ gsap.from(".manifest-content h1", {
 
 
 
+gsap.set(".manifest-letter",{
 
-
-
-
-/* =========================
-MANIFEST SLOGAN
-Пришел. Увидел. Запилил.
-========================= */
-
-
-gsap.from(".manifest-slogan .word", {
-
-
-    y:40,
+    y:120,
 
     opacity:0,
 
-    duration:.7,
+    rotateX:-60,
 
-    stagger:.12,
+    transformOrigin:"center bottom"
 
-    ease:"power3.out",
+});
+
+
+
+
+
+gsap.to(".manifest-letter",{
+
+
+    y:0,
+
+    opacity:1,
+
+    rotateX:0,
+
+
+    duration:1.1,
+
+
+    stagger:.035,
+
+
+    ease:"back.out(1.7)",
 
 
 
@@ -108,8 +138,47 @@ gsap.from(".manifest-slogan .word", {
 
         trigger:".manifest-block",
 
-        start:"top 50%",
+        start:"top 65%",
 
+
+        once:true
+
+
+    }
+
+
+});
+
+
+});
+
+
+/* =========================
+NEW SLOGAN
+ПРИШЕЛ. УСЛЫШАЛ. ЗАПИЛИЛ.
+========================= */
+
+
+gsap.from(".slogan-line .word", {
+
+
+    y:70,
+
+    opacity:0,
+
+    duration:.9,
+
+    stagger:.25,
+
+    ease:"power4.out",
+
+
+    scrollTrigger:{
+
+
+        trigger:".slogan-block",
+
+        start:"top 70%",
 
         once:true
 
@@ -157,7 +226,6 @@ document.querySelectorAll(".card-block .text").forEach((text)=>{
 
             start:"top 75%",
 
-
             once:true
 
 
@@ -178,24 +246,136 @@ document.querySelectorAll(".card-block .text").forEach((text)=>{
 
 
 /* =========================
-REFRESH
+HERO LETTER ANIMATION
+(оставляем твою старую механику)
 ========================= */
 
 
 window.addEventListener("load",()=>{
 
 
-    ScrollTrigger.refresh();
+const hero = document.querySelector(".hero-title");
+
+
+if(!hero) return;
+
+
+
+const walker = document.createTreeWalker(
+
+    hero,
+
+    NodeFilter.SHOW_TEXT
+
+);
+
+
+
+const textNodes=[];
+
+
+
+while(walker.nextNode()){
+
+    textNodes.push(walker.currentNode);
+
+}
+
+
+
+textNodes.forEach(node=>{
+
+
+    const fragment=document.createDocumentFragment();
+
+
+
+    [...node.textContent].forEach(char=>{
+
+
+        if(char===" "){
+
+
+            fragment.appendChild(
+
+                document.createTextNode(" ")
+
+            );
+
+
+        }
+
+        else{
+
+
+            const wrap=document.createElement("span");
+
+
+            wrap.className="hero-letter-wrap";
+
+
+
+            const span=document.createElement("span");
+
+
+            span.className="hero-letter";
+
+
+            span.textContent=char;
+
+
+
+            wrap.appendChild(span);
+
+
+            fragment.appendChild(wrap);
+
+
+        }
+
+
+    });
+
+
+
+    node.replaceWith(fragment);
 
 
 });
 
 
 
-window.addEventListener("resize",()=>{
 
 
-    ScrollTrigger.refresh();
+gsap.set(".hero-letter",{
+
+
+    yPercent:110
+
+
+});
+
+
+
+
+
+gsap.to(".hero-letter",{
+
+
+    yPercent:0,
+
+
+    duration:.9,
+
+
+    stagger:.045,
+
+
+    ease:"power4.out"
+
+
+});
+
 
 
 });
