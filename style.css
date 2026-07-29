@@ -98,7 +98,7 @@ HERO
 
 .hero-block{
 
-background:#7CFF2E;
+background:#B9ED00;
 
 display:flex;
 
@@ -345,21 +345,21 @@ COLORS
 
 .orange{
 
-background:#ff4d1a;
+background:#FF6716;
 
 }
 
 
 .green{
 
-background:#7CFF2E;
+background:#B9ED00;
 
 }
 
 
 .purple{
 
-background:#6A4CFF;
+background:#7182CB;
 
 }
 
@@ -444,7 +444,7 @@ font-family:'Inter',sans-serif;
 
 font-weight:500;
 
-font-size:clamp(28px,2vw,42px);
+font-size:clamp(34px,2.6vw,50px);
 
 line-height:1.1;
 
@@ -870,9 +870,9 @@ color:#D9D9D9;
 
 }
 
+.slogan-line .word.green{
 
-.slogan-line .green{
-
-color:#98E915;
+background:none;
+color:#B9ED00;
 
 }
