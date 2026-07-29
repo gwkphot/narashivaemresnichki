@@ -1,10 +1,4 @@
-/* =========================
-GSAP INIT
-========================= */
-
 gsap.registerPlugin(ScrollTrigger);
-
-
 
 
 
@@ -28,56 +22,81 @@ gsap.from(".hero-title", {
 });
 
 
+
+
+
 /* =========================
 MANIFEST TITLE
-LETTER REVEAL
+RESIDENCE SOFT WORD REVEAL
 ========================= */
 
 
-window.addEventListener("load", ()=>{
+window.addEventListener("load", () => {
 
 
-const title = document.querySelector(".manifest-content h1");
+    const title = document.querySelector(".manifest-content h1");
 
 
-if(!title) return;
+    if (!title) return;
 
 
 
-const nodes = [...title.childNodes];
+    document.querySelectorAll(".manifest-content .line").forEach(line => {
 
 
-nodes.forEach(node=>{
+        const text = line.textContent.trim();
 
 
-    if(node.nodeType === 3){
+        line.innerHTML = "";
 
 
-        const fragment = document.createDocumentFragment();
+
+        text.split(" ").forEach((word,index,arr)=>{
 
 
-        [...node.textContent].forEach(char=>{
+            const wordWrap = document.createElement("span");
 
 
-            if(char === " "){
+            wordWrap.className = "manifest-word";
 
 
-                fragment.appendChild(
-                    document.createTextNode(" ")
-                );
+            wordWrap.style.display = "inline-block";
 
 
-            } else {
+
+            [...word].forEach(letter=>{
 
 
                 const span = document.createElement("span");
 
-                span.className = "manifest-letter";
 
-                span.textContent = char;
+                span.className="manifest-letter";
 
 
-                fragment.appendChild(span);
+                span.textContent=letter;
+
+
+                span.style.display="inline-block";
+
+
+                wordWrap.appendChild(span);
+
+
+            });
+
+
+
+            line.appendChild(wordWrap);
+
+
+
+            if(index !== arr.length-1){
+
+
+                line.appendChild(
+                    document.createTextNode(" ")
+                );
+
 
             }
 
@@ -85,10 +104,74 @@ nodes.forEach(node=>{
         });
 
 
-        node.replaceWith(fragment);
+    });
 
 
-    }
+
+
+    gsap.set(".manifest-letter",{
+
+
+        y:35,
+
+        opacity:0,
+
+        filter:"blur(2px)"
+
+
+    });
+
+
+
+
+    const tl = gsap.timeline({
+
+
+        scrollTrigger:{
+
+
+            trigger:".manifest-block",
+
+            start:"top 65%",
+
+            once:true
+
+
+        }
+
+
+    });
+
+
+
+
+    document.querySelectorAll(".manifest-word").forEach(word=>{
+
+
+        tl.to(word.querySelectorAll(".manifest-letter"),{
+
+
+            y:0,
+
+            opacity:1,
+
+            filter:"blur(0px)",
+
+
+            duration:.55,
+
+
+            stagger:.008,
+
+
+            ease:"power2.out"
+
+
+        },"-=.32");
+
+
+    });
+
 
 
 });
@@ -97,64 +180,10 @@ nodes.forEach(node=>{
 
 
 
-gsap.set(".manifest-letter",{
-
-    y:120,
-
-    opacity:0,
-
-    rotateX:-60,
-
-    transformOrigin:"center bottom"
-
-});
-
-
-
-
-
-gsap.to(".manifest-letter",{
-
-
-    y:0,
-
-    opacity:1,
-
-    rotateX:0,
-
-
-    duration:1.1,
-
-
-    stagger:.035,
-
-
-    ease:"back.out(1.7)",
-
-
-
-    scrollTrigger:{
-
-
-        trigger:".manifest-block",
-
-        start:"top 65%",
-
-
-        once:true
-
-
-    }
-
-
-});
-
-
-});
 
 
 /* =========================
-NEW SLOGAN
+SLOGAN
 ПРИШЕЛ. УСЛЫШАЛ. ЗАПИЛИЛ.
 ========================= */
 
@@ -195,25 +224,161 @@ gsap.from(".slogan-line .word", {
 
 
 
-
 /* =========================
-CARD TEXT
+DESCRIPTION REVEAL
 ========================= */
 
 
-document.querySelectorAll(".card-block .text").forEach((text)=>{
+const description = document.querySelector(".description-block p");
 
 
-    gsap.from(text.children, {
+if(description){
 
 
-        y:40,
+    const text = description.textContent.trim();
+
+
+    description.innerHTML = "";
+
+
+
+    text.split(" ").forEach((word,index,arr)=>{
+
+
+        const span=document.createElement("span");
+
+
+        span.className="description-word";
+
+
+        span.textContent=word;
+
+
+        span.style.display="inline-block";
+
+
+
+        description.appendChild(span);
+
+
+
+        if(index !== arr.length-1){
+
+
+            description.appendChild(
+                document.createTextNode(" ")
+            );
+
+
+        }
+
+
+    });
+
+
+
+
+    gsap.set(".description-word",{
+
+
+        y:45,
 
         opacity:0,
 
-        duration:.8,
+        filter:"blur(2px)"
 
-        stagger:.15,
+
+    });
+
+
+
+
+    gsap.to(".description-word",{
+
+
+        y:0,
+
+        opacity:1,
+
+        filter:"blur(0px)",
+
+
+        duration:.75,
+
+
+        stagger:.025,
+
+
+        ease:"power2.out",
+
+
+
+        scrollTrigger:{
+
+
+            trigger:".description-block",
+
+
+            start:"top 70%",
+
+
+            once:true
+
+
+        }
+
+
+    });
+
+
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+SYMBOLS REVEAL
+========================= */
+
+
+document.querySelectorAll(".symbol img").forEach((symbol)=>{
+
+
+    gsap.set(symbol,{
+
+
+        scale:.82,
+
+        opacity:0,
+
+        filter:"blur(8px)",
+
+        y:30
+
+
+    });
+
+
+
+    gsap.to(symbol,{
+
+
+        scale:1,
+
+        opacity:1,
+
+        filter:"blur(0px)",
+
+        y:0,
+
+
+        duration:1.2,
+
 
         ease:"power3.out",
 
@@ -222,9 +387,11 @@ document.querySelectorAll(".card-block .text").forEach((text)=>{
         scrollTrigger:{
 
 
-            trigger:text,
+            trigger:symbol,
+
 
             start:"top 75%",
+
 
             once:true
 
@@ -244,10 +411,108 @@ document.querySelectorAll(".card-block .text").forEach((text)=>{
 
 
 
+/* =========================
+CARD TEXT REVEAL
+========================= */
+
+
+document.querySelectorAll(".card-block").forEach((card)=>{
+
+
+    const title = card.querySelector("h2");
+
+
+    const text = card.querySelector(".text p");
+
+
+
+    const tl = gsap.timeline({
+
+
+        scrollTrigger:{
+
+
+            trigger:card,
+
+
+            start:"top 70%",
+
+
+            once:true
+
+
+        }
+
+
+    });
+
+
+
+
+    if(title){
+
+
+        tl.from(title,{
+
+
+            y:30,
+
+            opacity:0,
+
+            filter:"blur(3px)",
+
+
+            duration:.7,
+
+
+            ease:"power2.out"
+
+
+        });
+
+
+    }
+
+
+
+
+    if(text){
+
+
+        tl.from(text,{
+
+
+            y:25,
+
+            opacity:0,
+
+            filter:"blur(2px)",
+
+
+            duration:.8,
+
+
+            ease:"power2.out"
+
+
+        },"-=.45");
+
+
+    }
+
+
+
+});
+
+
+
+
+
+
+
 
 /* =========================
 HERO LETTER ANIMATION
-(оставляем твою старую механику)
 ========================= */
 
 
@@ -277,9 +542,12 @@ const textNodes=[];
 
 while(walker.nextNode()){
 
+
     textNodes.push(walker.currentNode);
 
+
 }
+
 
 
 
@@ -297,9 +565,7 @@ textNodes.forEach(node=>{
 
 
             fragment.appendChild(
-
                 document.createTextNode(" ")
-
             );
 
 
@@ -341,7 +607,9 @@ textNodes.forEach(node=>{
     node.replaceWith(fragment);
 
 
+
 });
+
 
 
 
@@ -359,7 +627,9 @@ gsap.set(".hero-letter",{
 
 
 
+
 gsap.to(".hero-letter",{
+
 
 
     yPercent:0,
