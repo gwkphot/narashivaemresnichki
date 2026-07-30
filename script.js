@@ -649,3 +649,66 @@ gsap.to(".hero-letter",{
 
 
 });
+
+/* =========================
+DARK INFO REVEAL
+========================= */
+
+
+document.querySelectorAll(".info-dark-item").forEach(section=>{
+
+
+    const title = section.querySelector("h2");
+
+    const text = section.querySelector("p");
+
+
+
+    const tl = gsap.timeline({
+
+        scrollTrigger:{
+
+            trigger:section,
+
+            start:"top 70%",
+
+            once:true
+
+        }
+
+    });
+
+
+
+    tl.from(title,{
+
+        y:50,
+
+        opacity:0,
+
+        filter:"blur(3px)",
+
+        duration:.8,
+
+        ease:"power2.out"
+
+    });
+
+
+
+    tl.from(text,{
+
+        y:40,
+
+        opacity:0,
+
+        filter:"blur(3px)",
+
+        duration:.9,
+
+        ease:"power2.out"
+
+    },"-=.45");
+
+
+});
