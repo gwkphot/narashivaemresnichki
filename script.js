@@ -712,3 +712,49 @@ document.querySelectorAll(".info-dark-item").forEach(section=>{
 
 
 });
+
+/* =========================
+CONTACT
+========================= */
+
+gsap.timeline({
+
+    scrollTrigger:{
+
+        trigger:".contact-block",
+
+        start:"top 70%",
+
+        once:true
+
+    }
+
+})
+
+.from(".contact-left > *",{
+
+    y:30,
+
+    opacity:0,
+
+    stagger:.15,
+
+    duration:.8,
+
+    ease:"power2.out"
+
+})
+
+.from(".contact-right > *",{
+
+    y:30,
+
+    opacity:0,
+
+    stagger:.12,
+
+    duration:.8,
+
+    ease:"power2.out"
+
+},"-=.45");
