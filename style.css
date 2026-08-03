@@ -1,4 +1,3 @@
-
 *{
 margin:0;
 padding:0;
@@ -955,3 +954,631 @@ DARK INFO STACK
 .stack-card:nth-child(12){z-index:12;}
 .stack-card:nth-child(13){z-index:13;}
 .stack-card:nth-child(14){z-index:14;}
+.stack-card:nth-child(15){z-index:15;}
+
+/* =========================
+MEETINGS BLOCK
+========================= */
+
+.meetings-block .info-dark-content{
+
+    height:100%;
+
+    width:100%;
+
+    max-width:none;
+
+  padding:0 80px 40px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+}
+
+
+/* Заголовок */
+
+.meetings-block .info-dark-content h2{
+
+    margin-bottom:20px;
+
+}
+
+
+/* Основной текст */
+
+.meetings-block .info-dark-content p{
+
+    max-width:1500px;
+
+}
+
+
+
+/* =========================
+LINK "ПРИСОЕДИНИТЬСЯ"
+========================= */
+
+.meetings-block .join-link{
+
+    color:#4A7CFF;
+
+    text-decoration:none;
+
+    transition:color .25s ease;
+
+}
+
+
+
+.meetings-block .join-link:hover{
+
+    color:#98E915;
+
+    text-decoration:none;
+
+}
+
+
+
+/* =========================
+RESIDENTS IMAGE
+DESKTOP
+========================= */
+
+.meetings-block .residents-photo{
+
+    width:50vw;
+
+    height:auto;
+
+    max-height:45vh;
+
+    object-fit:contain;
+
+    margin:40px auto 0;
+
+    display:block;
+}
+
+
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:768px){
+
+
+    .meetings-block .info-dark-content{
+
+        padding:30px 24px 40px;
+
+    }
+
+
+    .meetings-block .info-dark-content h2{
+
+        margin-bottom:18px;
+
+    }
+
+
+    .meetings-block .info-dark-content p{
+
+        max-width:100%;
+
+    }
+
+
+    .meetings-block .residents-photo{
+
+        width:100%;
+
+        height:auto;
+
+        max-height:45vh;
+
+        object-fit:contain;
+
+        margin:35px auto 0;
+
+    }
+
+}
+/* =========================
+CONTACT BLOCK
+========================= */
+
+.contact-block{
+
+    background:#292929;
+
+    color:#D9D9D9;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    padding:70px 80px;
+
+}
+
+
+
+/* =========================
+BIG LOGO TOP
+========================= */
+
+.contact-end-logo{
+
+    order:1;
+
+    width:100%;
+
+    text-align:center;
+
+    margin-top:0;
+
+    margin-bottom:auto;
+
+    font-family:'Montserrat',sans-serif;
+
+    font-weight:800;
+
+    font-size:clamp(55px,8.5vw,170px);
+
+    line-height:.8;
+
+    letter-spacing:-.075em;
+
+    color:#D9D9D9;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    transition:color .35s ease;
+
+}
+
+
+
+.contact-end-logo:hover{
+
+    color:#98E915;
+
+}
+
+
+
+/* =========================
+BOTTOM CONTENT
+========================= */
+
+.contact-bottom{
+
+    order:2;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+
+}
+
+
+
+/* =========================
+LEFT
+========================= */
+
+.contact-left{
+
+    width:40%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:34px;
+
+}
+
+
+
+/* =========================
+SOCIAL LINKS
+========================= */
+
+.contact-socials{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+
+
+.contact-socials a{
+
+    font-family:'Inter',sans-serif;
+
+    font-weight:600;
+
+    font-size:clamp(34px,2.6vw,54px);
+
+    line-height:.95;
+
+    letter-spacing:-.045em;
+
+    color:#D9D9D9;
+
+    text-decoration:none;
+
+    transition:color .25s ease;
+
+}
+
+
+
+/* =========================
+SOCIAL COLORS
+========================= */
+
+.contact-socials a{
+
+    transition:color .25s ease;
+
+}
+
+
+.contact-socials a:nth-child(1):hover{
+
+    color:#FF6716; /* Instagram */
+
+}
+
+
+.contact-socials a:nth-child(2):hover{
+
+    color:#98E915; /* Telegram */
+
+}
+
+
+.contact-socials a:nth-child(3):hover{
+
+    color:#7182CB; /* VK */
+
+}
+
+/* =========================
+EMAIL
+========================= */
+
+.contact-input{
+
+    display:flex;
+
+    width:100%;
+
+    max-width:460px;
+
+}
+
+
+
+.contact-input input{
+
+    flex:1;
+
+    background:none;
+
+    border:none;
+
+    border-bottom:2px solid #D9D9D9;
+
+    color:#D9D9D9;
+
+    font-size:24px;
+
+    padding:14px 0;
+
+    outline:none;
+
+}
+
+
+
+.contact-input input::placeholder{
+
+    color:#777;
+
+}
+
+
+
+.contact-input button{
+
+    width:50px;
+
+    background:none;
+
+    border:none;
+
+    border-bottom:2px solid #D9D9D9;
+
+    color:#D9D9D9;
+
+    font-size:42px;
+
+    font-weight:700;
+
+    line-height:1;
+
+    padding:8px 0 10px;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+
+}
+
+
+.contact-input button:hover{
+
+    color:#98E915;
+
+    border-color:#98E915;
+
+}
+
+
+
+/* =========================
+RIGHT ADDRESS
+========================= */
+
+.contact-right{
+
+    text-align:right;
+
+}
+
+
+
+.contact-right span{
+
+    display:block;
+
+    color:#8e8e8e;
+
+    font-size:26px;
+
+    margin-bottom:18px;
+
+}
+
+
+
+.contact-right h2{
+
+    font-family:'Inter',sans-serif;
+
+    font-weight:600;
+
+    font-size:clamp(56px,5vw,92px);
+
+    line-height:.88;
+
+    letter-spacing:-.06em;
+
+}
+
+
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:768px){
+
+
+    .contact-block{
+
+        padding:40px 24px;
+
+    }
+
+
+
+    .contact-end-logo{
+
+        font-size:clamp(38px,10vw,70px);
+
+        white-space:nowrap;
+
+        margin-bottom:auto;
+
+    }
+
+
+
+    .contact-bottom{
+
+        flex-direction:column;
+
+        gap:50px;
+
+        align-items:flex-start;
+
+    }
+
+
+
+    .contact-left{
+
+        width:100%;
+
+    }
+
+
+
+    .contact-right{
+
+        width:100%;
+
+        text-align:left;
+
+    }
+
+
+
+    .contact-right h2{
+
+        font-size:60px;
+
+    }
+
+
+}
+
+/* =========================
+INFO BLOCK COLORS
+========================= */
+
+
+/* ДЖЕМЫ */
+
+.jams-block{
+
+    background:#B9ED00;
+
+}
+
+
+.jams-block .info-dark-content h2,
+.jams-block .info-dark-content p{
+
+    color:#292929;
+
+}
+
+
+
+/* МАСТЕР-КЛАССЫ */
+
+.workshops-block{
+
+    background:#D9D9D9;
+
+}
+
+
+.workshops-block .info-dark-content h2,
+.workshops-block .info-dark-content p{
+
+    color:#292929;
+
+}
+
+
+
+/* БЛИЖАЙШИЕ ВСТРЕЧИ */
+
+.meetings-block{
+
+    background:#292929;
+
+}
+
+
+.meetings-block .info-dark-content h2,
+.meetings-block .info-dark-content p{
+
+    color:#D9D9D9;
+
+}
+
+/* =========================
+JAMS + WORKSHOPS TYPOGRAPHY
+========================= */
+
+
+.jams-block .info-dark-content,
+.workshops-block .info-dark-content{
+
+    max-width:none;
+
+    width:100%;
+
+}
+
+
+.jams-block .info-dark-content h2,
+.workshops-block .info-dark-content h2{
+
+    font-size:clamp(56px,6vw,110px);
+
+    line-height:.9;
+
+    letter-spacing:-.065em;
+
+    margin-bottom:40px;
+
+}
+
+
+.jams-block .info-dark-content p,
+.workshops-block .info-dark-content p{
+
+    max-width:1600px;
+
+    font-size:clamp(32px,3.2vw,64px);
+
+    line-height:1.05;
+
+    letter-spacing:-.045em;
+
+}
+
+
+
+/* =========================
+MOBILE
+========================= */
+
+
+@media(max-width:768px){
+
+
+    .jams-block .info-dark-content h2,
+    .workshops-block .info-dark-content h2{
+
+        font-size:44px;
+
+        margin-bottom:25px;
+
+    }
+
+
+    .jams-block .info-dark-content p,
+    .workshops-block .info-dark-content p{
+
+        font-size:26px;
+
+        line-height:1.1;
+
+    }
+
+}
