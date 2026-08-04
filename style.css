@@ -1,33 +1,26 @@
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 
 html{
-
-scroll-behavior:smooth;
-
+    scroll-behavior:smooth;
 }
-
 
 
 body{
 
-background:#d9d9d9;
+    background:#d9d9d9;
 
-font-family:'Inter',sans-serif;
+    font-family:'Inter',sans-serif;
 
-color:#111;
+    color:#111;
 
-overflow-x:hidden;
+    overflow-x:hidden;
 
 }
-
-
-
-
 
 
 
@@ -38,9 +31,9 @@ MAIN STICKY STACK
 
 .main-stack{
 
-position:relative;
+    position:relative;
 
-width:100%;
+    width:100%;
 
 }
 
@@ -48,46 +41,20 @@ width:100%;
 
 .stack-card{
 
-height:100vh;
+    height:100vh;
 
-position:sticky;
+    position:sticky;
 
-top:0;
+    top:0;
 
-overflow:hidden;
-
-}
-
-
-
-
-
-
-
-
-
-..stack-card{
-
-position:sticky;
-
-top:0;
-
-z-index:1;
+    overflow:hidden;
 
 }
 
 
-.stack-card:nth-child(1){z-index:1;}
-.stack-card:nth-child(2){z-index:2;}
-.stack-card:nth-child(3){z-index:3;}
-.stack-card:nth-child(4){z-index:4;}
-.stack-card:nth-child(5){z-index:5;}
-.stack-card:nth-child(6){z-index:6;}
-.stack-card:nth-child(7){z-index:7;}
-.stack-card:nth-child(8){z-index:8;}
-.stack-card:nth-child(9){z-index:9;}
-.stack-card:nth-child(10){z-index:10;}
-.stack-card:nth-child(11){z-index:11;}
+
+
+
 
 
 /* =========================
@@ -97,13 +64,13 @@ HERO
 
 .hero-block{
 
-background:#B9ED00;
+    background:#B9ED00;
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-justify-content:center;
+    justify-content:center;
 
 }
 
@@ -111,21 +78,24 @@ justify-content:center;
 
 .hero-title{
 
-font-family:'Montserrat',sans-serif;
+    font-family:'Montserrat',sans-serif;
 
-font-weight:800;
+    font-weight:800;
 
-font-size:clamp(70px,7vw,150px);
+    font-size:clamp(70px,7vw,150px);
 
-line-height:.82;
+    line-height:.82;
 
-letter-spacing:-.07em;
+    letter-spacing:-.07em;
 
-color:#1A1A1A;
+    color:#1A1A1A;
 
-text-align:center;
+    text-align:center;
 
 }
+
+
+
 
 
 
@@ -137,11 +107,11 @@ MANIFEST
 
 .manifest-block{
 
-background:#d9d9d9;
+    background:#d9d9d9;
 
-padding:70px 80px;
+    padding:70px 80px;
 
-display:flex;
+    display:flex;
 
 }
 
@@ -149,62 +119,57 @@ display:flex;
 
 .manifest-content{
 
-width:100%;
+    width:100%;
 
-height:100%;
+    height:100%;
 
-display:flex;
+    display:flex;
 
-flex-direction:column;
+    flex-direction:column;
 
 }
-
 
 
 
 .manifest-content h1{
 
-font-family:'Inter',sans-serif;
+    font-family:'Inter',sans-serif;
 
-font-weight:600;
+    font-weight:600;
 
-font-size:clamp(48px,5vw,82px);
+    font-size:clamp(48px,5vw,82px);
 
-line-height:.92;
+    line-height:.92;
 
-letter-spacing:-.055em;
+    letter-spacing:-.055em;
 
-color:#333333;
+    color:#333;
 
 }
 
 
 
-
-
-
-
 .manifest-slogan{
 
-margin-top:auto;
+    margin-top:auto;
 
-display:flex;
+    display:flex;
 
-flex-direction:row;
+    flex-direction:row;
 
-gap:.25em;
+    gap:.25em;
 
-font-family:'Inter',sans-serif;
+    font-family:'Inter',sans-serif;
 
-font-weight:500;
+    font-weight:500;
 
-font-size:clamp(48px,5vw,82px);
+    font-size:clamp(48px,5vw,82px);
 
-line-height:.95;
+    line-height:.95;
 
-letter-spacing:-.05em;
+    letter-spacing:-.05em;
 
-color:#333333;
+    color:#333;
 
 }
 
@@ -212,9 +177,11 @@ color:#333333;
 
 .manifest-slogan .word{
 
-display:inline-block;
+    display:inline-block;
 
 }
+
+
 
 
 
@@ -227,7 +194,7 @@ IMAGE LAYERS
 
 .image-card{
 
-width:100%;
+    width:100%;
 
 }
 
@@ -235,32 +202,36 @@ width:100%;
 
 .image-card img{
 
-width:100%;
+    width:100%;
 
-height:100%;
+    height:100%;
 
-object-fit:cover;
+    object-fit:cover;
 
-display:block;
+    display:block;
 
 }
 
 
 
+
+
+
+
 /* =========================
-DESCRIPTION STACK
+DESCRIPTION
 ========================= */
 
 
 .description-block{
 
-background:#bdbdb8;
+    background:#bdbdb8;
 
-padding:70px 80px;
+    padding:70px 80px;
 
-display:flex;
+    display:flex;
 
-align-items:flex-start;
+    align-items:flex-start;
 
 }
 
@@ -268,25 +239,21 @@ align-items:flex-start;
 
 .description-block p{
 
-font-family:'Inter',sans-serif;
+    font-family:'Inter',sans-serif;
 
-font-weight:500;
+    font-weight:500;
 
-font-size:clamp(30px,3vw,54px);
+    font-size:clamp(30px,3vw,54px);
 
-line-height:1.05;
+    line-height:1.05;
 
-letter-spacing:-.04em;
+    letter-spacing:-.04em;
 
-color:#333333;
+    color:#333;
 
-max-width:1600px;
+    max-width:1600px;
 
 }
-
-
-
-
 
 /* =========================
 CARDS
@@ -295,21 +262,11 @@ CARDS
 
 .card-block{
 
-display:grid;
+    display:grid;
 
-grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr 1fr;
 
-}
-
-
-
-/* =========================
-STICKY CARD DELAY
-========================= */
-
-.card-block{
-
-margin-bottom:18vh;
+    margin-bottom:18vh;
 
 }
 
@@ -317,23 +274,15 @@ margin-bottom:18vh;
 
 .half{
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-justify-content:center;
+    justify-content:center;
 
-overflow:hidden;
+    overflow:hidden;
 
 }
-
-
-
-.stack-card:nth-child(10){
-z-index:10;
-}
-
-
 
 
 
@@ -344,29 +293,25 @@ COLORS
 
 .orange{
 
-background:#FF6716;
+    background:#FF6716;
 
 }
+
 
 
 .green{
 
-background:#B9ED00;
+    background:#B9ED00;
 
 }
+
 
 
 .purple{
 
-background:#7182CB;
+    background:#7182CB;
 
 }
-
-
-
-
-
-
 
 
 
@@ -377,19 +322,13 @@ SYMBOLS
 
 .symbol img{
 
-width:min(72vh,680px);
+    width:min(72vh,680px);
 
-height:min(72vh,680px);
+    height:min(72vh,680px);
 
-object-fit:contain;
+    object-fit:contain;
 
 }
-
-
-
-
-
-
 
 
 
@@ -400,60 +339,64 @@ TEXT
 
 .text{
 
-background:#d9d9d9;
+    background:#d9d9d9;
 
-padding:70px 40px 70px 40px;
+    padding:70px 40px;
 
-display:flex;
+    display:flex;
 
-flex-direction:column;
+    flex-direction:column;
 
-justify-content:flex-start;
+    justify-content:flex-start;
 
-align-items:flex-start;
+    align-items:flex-start;
 
 }
+
+
 
 .text h2{
 
-font-family:'Inter',sans-serif;
+    font-family:'Inter',sans-serif;
 
-font-weight:600;
+    font-weight:600;
 
-font-size:clamp(42px,3.2vw,60px);
+    font-size:clamp(42px,3.2vw,60px);
 
-line-height:.95;
+    line-height:.95;
 
-letter-spacing:-.045em;
+    letter-spacing:-.045em;
 
-color:#333333;
+    color:#333333;
 
-margin-bottom:auto;
+    margin-bottom:auto;
 
-max-width:700px;
+    max-width:700px;
 
 }
-
 
 
 
 .text p{
 
-font-family:'Inter',sans-serif;
+    font-family:'Inter',sans-serif;
 
-font-weight:500;
+    font-weight:500;
 
-font-size:clamp(34px,2.6vw,50px);
+    font-size:clamp(28px,2.1vw,40px);
 
-line-height:1.1;
+    line-height:1.12;
 
-letter-spacing:-.035em;
+    letter-spacing:-.035em;
 
-color:#333333;
+    color:#333333;
 
-max-width:850px;
+    max-width:850px;
 
 }
+
+
+
 
 /* =========================
 TABLET
@@ -463,76 +406,70 @@ TABLET
 @media(max-width:1024px){
 
 
-.manifest-block{
+    .manifest-block{
 
-padding:50px;
+        padding:50px;
+
+    }
+
+
+
+    .manifest-content h1{
+
+        font-size:48px;
+
+    }
+
+
+
+    .manifest-slogan{
+
+        font-size:48px;
+
+    }
+
+
+
+    .text{
+
+        padding:50px;
+
+    }
+
+
+
+    .text h2{
+
+        font-size:48px;
+
+    }
+
+
+
+    .text p{
+
+        font-size:24px;
+
+    }
+
+
+
+    .symbol img{
+
+        width:75%;
+
+        height:75%;
+
+    }
+
 
 }
-
-
-
-.manifest-content h1{
-
-font-size:48px;
-
-}
-
-
-
-.manifest-slogan{
-
-font-size:48px;
-
-}
-
-
-
-.text{
-
-padding:50px;
-
-}
-
-
-
-.text h2{
-
-font-size:48px;
-
-}
-
-
-
-.text p{
-
-font-size:22px;
-
-}
-
-
-
-.symbol img{
-
-width:75%;
-
-height:75%;
-
-}
-
-
-
-}
-
-
-
-
-
 
 
 
 
 /* =========================
-MOBILE
+MOBILE CARDS
 ========================= */
 
 
@@ -540,143 +477,117 @@ MOBILE
 
 
 
-/* HERO */
+    .hero-title{
 
+        font-size:72px;
 
-.hero-title{
+    }
 
-font-size:72px;
 
-}
 
+    .manifest-block{
 
+        padding:40px 24px;
 
+    }
 
 
 
+    .manifest-content h1{
 
-/* MANIFEST */
+        font-size:38px;
 
+    }
 
-.manifest-block{
 
-padding:40px 24px;
 
-}
+    .manifest-slogan{
 
+        font-size:34px;
 
+        gap:.15em;
 
-.manifest-content h1{
+    }
 
-font-size:38px;
 
-}
 
+    .image-card img{
 
+        object-position:center;
 
-.manifest-slogan{
+    }
 
-font-size:34px;
 
-gap:.15em;
 
-}
+    .card-block{
 
+        display:flex;
 
+        flex-direction:column;
 
+    }
 
 
-/* IMAGES */
 
+    .symbol{
 
-.image-card img{
+        height:50vh;
 
-object-position:center;
+        width:100%;
 
-}
+        order:1;
 
+    }
 
 
 
+    .symbol img{
 
+        width:90%;
 
+        height:90%;
 
+    }
 
 
-/* CARDS */
 
+    .text{
 
-.card-block{
+        height:50vh;
 
-display:flex;
+        width:100%;
 
-flex-direction:column;
+        order:2;
 
-}
+        padding:28px 16px;
 
+    }
 
 
-.symbol{
 
-height:50vh;
+    .text h2{
 
-width:100%;
+        font-size:34px;
 
-order:1;
+        margin-bottom:24px;
 
-}
+    }
 
 
 
-.symbol img{
+    .text p{
 
-width:90%;
+        font-size:24px;
 
-height:90%;
+        line-height:1.2;
 
-}
+        letter-spacing:-.03em;
 
-
-
-.text{
-
-height:50vh;
-
-width:100%;
-
-order:2;
-
-padding:28px 24px;
-
-}
-
-
-
-
-
-.text h2{
-
-font-size:34px;
-
-}
-
-
-
-.text p{
-
-font-size:18px;
-
-}
-
-
+    }
 
 
 
 }
-
-
-
-
 
 
 
@@ -691,196 +602,162 @@ SMALL MOBILE
 
 
 
-.hero-title{
+    .hero-title{
 
-font-size:56px;
+        font-size:56px;
 
-}
-
-
-
-.manifest-content h1{
-
-font-size:32px;
-
-}
+    }
 
 
 
-.manifest-slogan{
+    .manifest-content h1{
 
-font-size:28px;
+        font-size:32px;
 
-}
-
-
+    }
 
 
 
-.text{
+    .manifest-slogan{
 
-padding:22px;
+        font-size:28px;
 
-}
-
-
-
-.text h2{
-
-font-size:30px;
-
-}
+    }
 
 
 
-.text p{
+    .text{
 
-font-size:17px;
+        padding:22px 14px;
 
-}
+    }
+
+
+
+    .text h2{
+
+        font-size:30px;
+
+    }
+
+
+
+    .text p{
+
+        font-size:22px;
+
+    }
 
 
 
 }
+/* =========================
+FIXED LOGO
+========================= */
+
 
 .logo-fixed{
 
-position:fixed;
+    position:fixed;
 
-top:35px;
+    top:35px;
 
-right:40px;
+    right:40px;
 
-z-index:9999;
+    z-index:9999;
 
-width:60px;
+    width:60px;
 
-height:60px;
+    height:60px;
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-justify-content:center;
+    justify-content:center;
 
-border:2px solid #111;
+    border:2px solid #111;
 
-background:transparent;
+    background:transparent;
 
-transition:.3s ease;
+    transition:.3s ease;
 
-overflow:hidden;
+    overflow:hidden;
 
 }
+
 
 
 .logo-fixed img{
 
-width:75%;
+    width:75%;
 
-height:75%;
+    height:75%;
 
-object-fit:contain;
+    object-fit:contain;
 
-transition:.3s ease;
+    transition:.3s ease;
 
 }
+
 
 
 .logo-fixed:hover{
 
-background:#111;
+    background:#111;
 
 }
+
 
 
 .logo-fixed:hover img{
 
-filter:invert(1);
+    filter:invert(1);
 
 }
+
+
+
+
+
 
 
 /* =========================
-   HERO LETTER ANIMATION
+LETTER ANIMATION
 ========================= */
 
+
 .hero-letter-wrap{
+
     display:inline-block;
+
     overflow:hidden;
+
     vertical-align:bottom;
+
 }
+
 
 
 .hero-letter{
+
     display:inline-block;
+
 }
 
+
+
+
+
+
+
 /* =========================
-NEW SLOGAN
+SLOGAN
+ПРИШЕЛ. УСЛЫШАЛ. ЗАПИЛИЛ.
 ========================= */
+
 
 .slogan-block{
-
-background:#292929;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-overflow:hidden;
-
-}
-
-
-.slogan-line{
-
-display:flex;
-
-gap:.28em;
-
-font-family:'Inter',sans-serif;
-
-font-weight:700;
-
-font-size:clamp(48px,5vw,90px);
-
-letter-spacing:-.055em;
-
-line-height:1;
-
-white-space:nowrap;
-
-}
-
-
-.slogan-line .word{
-
-display:inline-block;
-
-}
-
-
-.slogan-line .light{
-
-color:#D9D9D9;
-
-}
-
-.slogan-line .word.green{
-
-background:none;
-color:#B9ED00;
-
-}
-/* =========================
-DARK INFO STACK
-========================= */
-
-
-.info-dark-item{
 
     background:#292929;
 
@@ -888,148 +765,507 @@ DARK INFO STACK
 
     align-items:center;
 
-    padding:70px 80px;
+    justify-content:center;
+
+    overflow:hidden;
 
 }
 
 
 
-.info-dark-content{
+.slogan-line{
 
-    max-width:1400px;
+    display:flex;
+
+    gap:.28em;
+
+    font-family:'Inter',sans-serif;
+
+    font-weight:700;
+
+    font-size:clamp(48px,5vw,90px);
+
+    letter-spacing:-.055em;
+
+    line-height:1;
+
+    white-space:nowrap;
 
 }
 
 
 
-.info-dark-content h2{
+.slogan-line .word{
+
+    display:inline-block;
+
+}
+
+
+
+.slogan-line .light{
 
     color:#D9D9D9;
 
-    font-family:'Inter',sans-serif;
+}
+
+
+
+.slogan-line .green{
+
+    color:#98E915;
+
+    background:none;
+
+}
+
+
+
+
+/* =========================
+МАСТЕР-КЛАССЫ
+========================= */
+
+
+.workshops-block{
+
+    background:#D9D9D9;
+
+    display:block;
+
+    padding:80px 40px;
+
+}
+
+
+
+
+.workshops-block h2{
+
+    font-family:'Inter', sans-serif;
 
     font-weight:600;
 
-    font-size:clamp(42px,3.2vw,60px);
+    font-size:clamp(44px,3.8vw,68px);
 
     line-height:.95;
 
-    letter-spacing:-.045em;
+    letter-spacing:-.055em;
 
-    margin-bottom:60px;
+    margin:0 0 50px 0;
+
+    color:#7182CB;
 
 }
 
 
 
-.info-dark-content p{
 
-    color:#D9D9D9;
+.workshops-block p{
 
-    font-family:'Inter',sans-serif;
+    font-family:'Inter', sans-serif;
 
     font-weight:500;
 
-    font-size:clamp(24px,2vw,36px);
+    font-size:clamp(26px,2.15vw,40px);
 
-    line-height:1.1;
+    line-height:1.12;
 
     letter-spacing:-.035em;
 
-    max-width:1000px;
+    max-width:1800px;
+
+    margin:0;
+
+    color:#292929;
 
 }
 
-.stack-card:nth-child(1){z-index:1;}
-.stack-card:nth-child(2){z-index:2;}
-.stack-card:nth-child(3){z-index:3;}
-.stack-card:nth-child(4){z-index:4;}
-.stack-card:nth-child(5){z-index:5;}
-.stack-card:nth-child(6){z-index:6;}
-.stack-card:nth-child(7){z-index:7;}
-.stack-card:nth-child(8){z-index:8;}
-.stack-card:nth-child(9){z-index:9;}
-.stack-card:nth-child(10){z-index:10;}
-.stack-card:nth-child(11){z-index:11;}
-.stack-card:nth-child(12){z-index:12;}
-.stack-card:nth-child(13){z-index:13;}
-.stack-card:nth-child(14){z-index:14;}
-.stack-card:nth-child(15){z-index:15;}
+
+
+
+
+/* =========================
+TABLET
+========================= */
+
+
+@media(max-width:1024px){
+
+    .workshops-block{
+
+        padding:60px 30px;
+
+    }
+
+
+    .workshops-block h2{
+
+        margin-bottom:40px;
+
+    }
+
+
+    .workshops-block p{
+
+        max-width:100%;
+
+    }
+
+}
+
+
+
+
+
+/* =========================
+MOBILE
+========================= */
+
+
+@media(max-width:768px){
+
+    .workshops-block{
+
+        padding:45px 20px;
+
+    }
+
+
+    .workshops-block h2{
+
+        font-size:38px;
+
+        margin-bottom:30px;
+
+    }
+
+
+    .workshops-block p{
+
+        font-size:22px;
+
+        line-height:1.15;
+
+    }
+
+}
+/* =========================
+ДЖЕМЫ
+========================= */
+
+
+.jams-block{
+
+    background:#D9D9D9;
+
+    display:block;
+
+    padding:80px 40px;
+
+}
+
+
+
+
+.jams-block h2{
+
+    font-family:'Inter', sans-serif;
+
+    font-weight:600;
+
+    font-size:clamp(44px,3.8vw,68px);
+
+    line-height:.95;
+
+    letter-spacing:-.055em;
+
+    margin:0 0 50px 0;
+
+    color:#FF6716;
+
+}
+
+
+
+
+.jams-block p{
+
+    font-family:'Inter', sans-serif;
+
+    font-weight:500;
+
+    font-size:clamp(26px,2.15vw,40px);
+
+    line-height:1.12;
+
+    letter-spacing:-.035em;
+
+    max-width:1800px;
+
+    margin:0;
+
+    color:#292929;
+
+}
+
+
+
+
+
+/* =========================
+TABLET
+========================= */
+
+
+@media(max-width:1024px){
+
+    .jams-block{
+
+        padding:60px 30px;
+
+    }
+
+
+    .jams-block h2{
+
+        margin-bottom:40px;
+
+    }
+
+
+    .jams-block p{
+
+        max-width:100%;
+
+    }
+
+}
+
+
+
+
+
+/* =========================
+MOBILE
+========================= */
+
+
+@media(max-width:768px){
+
+    .jams-block{
+
+        padding:45px 20px;
+
+    }
+
+
+    .jams-block h2{
+
+        font-size:38px;
+
+        margin-bottom:30px;
+
+    }
+
+
+    .jams-block p{
+
+        font-size:22px;
+
+        line-height:1.15;
+
+    }
+
+}
+
 
 /* =========================
 MEETINGS BLOCK
 ========================= */
 
-.meetings-block .info-dark-content{
 
-    height:100%;
+.meetings-block{
 
-    width:100%;
+    background:#292929;
 
-    max-width:none;
+    min-height:100vh;
 
-  padding:0 80px 40px;
+    padding:80px 80px;
 
     display:flex;
 
     flex-direction:column;
 
-    justify-content:flex-start;
+    justify-content:space-between;
 
 }
 
 
-/* Заголовок */
 
-.meetings-block .info-dark-content h2{
+/* =========================
+MAIN TEXT
+========================= */
 
-    margin-bottom:20px;
+
+.meetings-main{
+
+    width:100%;
 
 }
 
 
-/* Основной текст */
 
-.meetings-block .info-dark-content p{
+.meetings-main p{
+
+    font-family:'Inter',sans-serif;
+
+    font-weight:500;
+
+    font-size:clamp(24px,2.4vw,48px);
+
+    line-height:1.08;
+
+    letter-spacing:-.04em;
+
+    color:#D9D9D9;
 
     max-width:1500px;
 
-}
-
-
-
-/* =========================
-LINK "ПРИСОЕДИНИТЬСЯ"
-========================= */
-
-.meetings-block .join-link{
-
-    color:#4A7CFF;
-
-    text-decoration:none;
-
-    transition:color .25s ease;
-
-}
-
-
-
-.meetings-block .join-link:hover{
-
-    color:#98E915;
-
-    text-decoration:none;
+    margin:0;
 
 }
 
 
 
 /* =========================
-RESIDENTS IMAGE
-DESKTOP
+WINDOW NOTE
 ========================= */
 
-.meetings-block .residents-photo{
+
+.window-note{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin-top:auto;
+
+    padding-top:140px;
+
+}
+
+
+
+.window-note p{
+
+    width:50%;
+
+    font-family:'Inter',sans-serif;
+
+    font-weight:500;
+
+    font-size:clamp(24px,2.4vw,48px);
+
+    line-height:1.08;
+
+    letter-spacing:-.04em;
+
+    color:#D9D9D9;
+
+    margin:0;
+
+}
+
+
+
+.window-note strong{
+
+    font-weight:600;
+
+}
+
+
+
+
+
+/* =========================
+MOBILE
+========================= */
+
+
+@media(max-width:768px){
+
+
+    .meetings-block{
+
+        min-height:auto;
+
+        padding:40px 12px 70px;
+
+    }
+
+
+
+    .meetings-main{
+
+        width:100%;
+
+    }
+
+
+
+    .meetings-main p{
+
+        font-size:24px;
+
+        line-height:1.15;
+
+        letter-spacing:-.03em;
+
+    }
+
+
+
+    .window-note{
+
+        width:100%;
+
+        display:block;
+
+        padding-top:80px;
+
+        margin-top:0;
+
+    }
+
+
+
+    .window-note p{
+
+        width:100%;
+
+        font-size:24px;
+
+        line-height:1.15;
+
+        letter-spacing:-.03em;
+
+    }
+
+
+}
+
+
+
+/* =========================
+RESIDENT PHOTO
+========================= */
+
+
+.residents-photo{
 
     width:50vw;
 
@@ -1039,59 +1275,51 @@ DESKTOP
 
     object-fit:contain;
 
+    display:block;
+
     margin:40px auto 0;
 
-    display:block;
 }
+
+
 
 
 
 /* =========================
-MOBILE
+FINAL IMAGE
 ========================= */
 
-@media(max-width:768px){
 
+.final-image-block{
 
-    .meetings-block .info-dark-content{
-
-        padding:30px 24px 40px;
-
-    }
-
-
-    .meetings-block .info-dark-content h2{
-
-        margin-bottom:18px;
-
-    }
-
-
-    .meetings-block .info-dark-content p{
-
-        max-width:100%;
-
-    }
-
-
-    .meetings-block .residents-photo{
-
-        width:100%;
-
-        height:auto;
-
-        max-height:45vh;
-
-        object-fit:contain;
-
-        margin:35px auto 0;
-
-    }
+    overflow:hidden;
 
 }
+
+
+
+.final-image-block img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+
+
+
+
+
+
 /* =========================
 CONTACT BLOCK
 ========================= */
+
 
 .contact-block{
 
@@ -1111,13 +1339,16 @@ CONTACT BLOCK
 
 
 
+
+
+
+
 /* =========================
-BIG LOGO TOP
+CONTACT BIG LOGO
 ========================= */
 
-.contact-end-logo{
 
-    order:1;
+.contact-end-logo{
 
     width:100%;
 
@@ -1143,7 +1374,7 @@ BIG LOGO TOP
 
     overflow:hidden;
 
-    transition:color .35s ease;
+    transition:.35s ease;
 
 }
 
@@ -1157,13 +1388,16 @@ BIG LOGO TOP
 
 
 
+
+
+
+
 /* =========================
-BOTTOM CONTENT
+CONTACT BOTTOM
 ========================= */
 
-.contact-bottom{
 
-    order:2;
+.contact-bottom{
 
     display:flex;
 
@@ -1175,9 +1409,14 @@ BOTTOM CONTENT
 
 
 
+
+
+
+
 /* =========================
-LEFT
+CONTACT LEFT
 ========================= */
+
 
 .contact-left{
 
@@ -1192,10 +1431,6 @@ LEFT
 }
 
 
-
-/* =========================
-SOCIAL LINKS
-========================= */
 
 .contact-socials{
 
@@ -1225,46 +1460,44 @@ SOCIAL LINKS
 
     text-decoration:none;
 
-    transition:color .25s ease;
+    transition:.25s ease;
 
 }
 
-
-
-/* =========================
-SOCIAL COLORS
-========================= */
-
-.contact-socials a{
-
-    transition:color .25s ease;
-
-}
 
 
 .contact-socials a:nth-child(1):hover{
 
-    color:#FF6716; /* Instagram */
+    color:#FF6716;
 
 }
+
 
 
 .contact-socials a:nth-child(2):hover{
 
-    color:#98E915; /* Telegram */
+    color:#98E915;
 
 }
+
 
 
 .contact-socials a:nth-child(3):hover{
 
-    color:#7182CB; /* VK */
+    color:#7182CB;
 
 }
+
+
+
+
+
+
 
 /* =========================
 EMAIL
 ========================= */
+
 
 .contact-input{
 
@@ -1322,17 +1555,10 @@ EMAIL
 
     font-size:42px;
 
-    font-weight:700;
-
-    line-height:1;
-
-    padding:8px 0 10px;
-
     cursor:pointer;
 
-    transition:.25s ease;
-
 }
+
 
 
 .contact-input button:hover{
@@ -1345,9 +1571,14 @@ EMAIL
 
 
 
+
+
+
+
 /* =========================
-RIGHT ADDRESS
+CONTACT RIGHT
 ========================= */
+
 
 .contact-right{
 
@@ -1387,11 +1618,36 @@ RIGHT ADDRESS
 
 
 
+
+
+
+
 /* =========================
-MOBILE
+MOBILE FINAL
 ========================= */
 
+
 @media(max-width:768px){
+
+
+    .info-dark-item{
+
+        padding:40px 24px;
+
+    }
+
+
+
+    .residents-photo{
+
+        width:100%;
+
+        max-height:40vh;
+
+        margin-top:30px;
+
+    }
+
 
 
     .contact-block{
@@ -1406,10 +1662,6 @@ MOBILE
 
         font-size:clamp(38px,10vw,70px);
 
-        white-space:nowrap;
-
-        margin-bottom:auto;
-
     }
 
 
@@ -1418,9 +1670,9 @@ MOBILE
 
         flex-direction:column;
 
-        gap:50px;
-
         align-items:flex-start;
+
+        gap:50px;
 
     }
 
@@ -1450,135 +1702,5 @@ MOBILE
 
     }
 
-
-}
-
-/* =========================
-INFO BLOCK COLORS
-========================= */
-
-
-/* ДЖЕМЫ */
-
-.jams-block{
-
-    background:#B9ED00;
-
-}
-
-
-.jams-block .info-dark-content h2,
-.jams-block .info-dark-content p{
-
-    color:#292929;
-
-}
-
-
-
-/* МАСТЕР-КЛАССЫ */
-
-.workshops-block{
-
-    background:#D9D9D9;
-
-}
-
-
-.workshops-block .info-dark-content h2,
-.workshops-block .info-dark-content p{
-
-    color:#292929;
-
-}
-
-
-
-/* БЛИЖАЙШИЕ ВСТРЕЧИ */
-
-.meetings-block{
-
-    background:#292929;
-
-}
-
-
-.meetings-block .info-dark-content h2,
-.meetings-block .info-dark-content p{
-
-    color:#D9D9D9;
-
-}
-
-/* =========================
-JAMS + WORKSHOPS TYPOGRAPHY
-========================= */
-
-
-.jams-block .info-dark-content,
-.workshops-block .info-dark-content{
-
-    max-width:none;
-
-    width:100%;
-
-}
-
-
-.jams-block .info-dark-content h2,
-.workshops-block .info-dark-content h2{
-
-    font-size:clamp(56px,6vw,110px);
-
-    line-height:.9;
-
-    letter-spacing:-.065em;
-
-    margin-bottom:40px;
-
-}
-
-
-.jams-block .info-dark-content p,
-.workshops-block .info-dark-content p{
-
-    max-width:1600px;
-
-    font-size:clamp(32px,3.2vw,64px);
-
-    line-height:1.05;
-
-    letter-spacing:-.045em;
-
-}
-
-
-
-/* =========================
-MOBILE
-========================= */
-
-
-@media(max-width:768px){
-
-
-    .jams-block .info-dark-content h2,
-    .workshops-block .info-dark-content h2{
-
-        font-size:44px;
-
-        margin-bottom:25px;
-
-    }
-
-
-    .jams-block .info-dark-content p,
-    .workshops-block .info-dark-content p{
-
-        font-size:26px;
-
-        line-height:1.1;
-
-    }
 
 }
