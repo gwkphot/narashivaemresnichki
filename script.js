@@ -651,26 +651,112 @@ gsap.to(".hero-letter",{
 });
 
 /* =========================
-DARK INFO REVEAL
+WORKSHOPS + JAMS REVEAL
+KEEP LINE BREAKS
 ========================= */
 
 
-document.querySelectorAll(".info-dark-item").forEach(section=>{
+document.querySelectorAll(
+    ".workshops-block p, .jams-block p"
+).forEach(block=>{
 
 
-    const title = section.querySelector("h2");
-
-    const text = section.querySelector("p");
+    const nodes = [...block.childNodes];
 
 
+    nodes.forEach(node=>{
 
-    const tl = gsap.timeline({
+
+        if(node.nodeType !== 3) return;
+
+
+        const words = node.textContent.split(/(\s+)/);
+
+
+        const fragment = document.createDocumentFragment();
+
+
+        words.forEach(word=>{
+
+
+            if(word.trim()){
+
+
+                const span = document.createElement("span");
+
+
+                span.className = "description-word";
+
+
+                span.textContent = word;
+
+
+                fragment.appendChild(span);
+
+
+            }
+            else{
+
+
+                fragment.appendChild(
+                    document.createTextNode(word)
+                );
+
+
+            }
+
+
+        });
+
+
+
+        node.replaceWith(fragment);
+
+
+    });
+
+
+
+    const words = block.querySelectorAll(
+        ".description-word"
+    );
+
+
+
+    gsap.set(words,{
+
+        y:45,
+
+        opacity:0,
+
+        filter:"blur(2px)"
+
+    });
+
+
+
+    gsap.to(words,{
+
+        y:0,
+
+        opacity:1,
+
+        filter:"blur(0px)",
+
+        duration:.7,
+
+        stagger:.018,
+
+        ease:"power2.out",
+
 
         scrollTrigger:{
 
-            trigger:section,
+
+            trigger:block.closest(".stack-card"),
 
             start:"top 70%",
+
 
             once:true
 
@@ -679,40 +765,7 @@ document.querySelectorAll(".info-dark-item").forEach(section=>{
     });
 
 
-
-    tl.from(title,{
-
-        y:50,
-
-        opacity:0,
-
-        filter:"blur(3px)",
-
-        duration:.8,
-
-        ease:"power2.out"
-
-    });
-
-
-
-    tl.from(text,{
-
-        y:40,
-
-        opacity:0,
-
-        filter:"blur(3px)",
-
-        duration:.9,
-
-        ease:"power2.out"
-
-    },"-=.45");
-
-
 });
-
 /* =========================
 CONTACT
 ========================= */
